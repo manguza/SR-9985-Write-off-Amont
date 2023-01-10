@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Phoenix Type="RecordMap" Name="LN85909I" Standard="Fixed">
+<Fields>
+<Element Id="ACCTNO" Type="2" Length="19" Decimal="0"/>
+<Element Id="ACTYPE" Type="5" Length="1" Decimal="0"/>
+</Fields>
+<Description>
+<Element Id="ACCTNO" Text="Account Number"/>
+<Element Id="ACTYPE" Text="Account Type"/>
+</Description>
+</Phoenix>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Phoenix Type="RecordMap" Name="LN87909O" Standard="Fixed">
+<Fields>
+<Element Id="@O1_ACCTNO" Type="2" Length="19" Decimal="0"/>
+<Element Id="@O1_ACTYPE" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_RCTYPE" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_PWDT8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_PWCBAL" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_PWACCINT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_PWBKSC" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_PWINTR" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_PWLC" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_PWCOM" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_PWOTHCHG" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_PWMISCD" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_PWRESINT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_PWRESLC" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_PWMORINT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_PWADVPMT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_PWCURPO" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+</Fields>
+<Description>
+<Element Id="ACCTNO" Text="Account Number"/>
+<Element Id="ACTYPE" Text="Account Type"/>
+<Element Id="RCTYPE" Text="Record Type A=Active,D=Delete"/>
+<Element Id="PWDT8" Text="Write-off Date"/>
+<Element Id="PWCBAL" Text="Write-off Current Balance"/>
+<Element Id="PWACCINT" Text="Write-off Accrued Interest"/>
+<Element Id="PWBKSC" Text="Write-off Bank Discount"/>
+<Element Id="PWINTR" Text="Write-off Interest Rebate"/>
+<Element Id="PWLC" Text="Write-off Late Charge"/>
+<Element Id="PWCOM" Text="Write-off Commitment Fee"/>
+<Element Id="PWOTHCHG" Text="Write-off Other Charge"/>
+<Element Id="PWMISCD" Text="Write-off Miscellaneous Charges"/>
+<Element Id="PWRESINT" Text="Write-off Restructure Interest"/>
+<Element Id="PWRESLC" Text="Write-off Restructure Late Charge"/>
+<Element Id="PWMORINT" Text="Write-off ACCRUED Moratorium Interest"/>
+<Element Id="PWADVPMT" Text="Write-off Advance Payment"/>
+<Element Id="PWCURPO" Text="Write-off Total Outstanding"/>
+</Description>
+</Phoenix>

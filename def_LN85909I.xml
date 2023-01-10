@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Phoenix Type="Operation"  Name="LN85909I">
+<InputBuffer>
+<Buffer Name="XML" Source="" Path="" />
+</InputBuffer>
+<OutputBuffer>
+<Condition Operator="DEFAULT"  Factor1="" Factor2=""  Codepage="null">
+<Buffers Name="SIBS">
+<Buffer Name="DSP" Source="Text" Path="cfg_mmap/mmap_dspheader.xml"/>
+<Buffer Name="APP" Source="Text" Path="cfg_mmap/mmap_appheader.xml"/>
+<Buffer Name="BDY" Source="Text" Path="cfg_mmap/mmap_LN85909I.xml"/>
+</Buffers>
+<Mapping>
+<Map Name="Map_LN85909I" Source="Text" Path="cfg_map/map_inquiry_request.xml"/>
+</Mapping>
+</Condition>
+</OutputBuffer>
+</Phoenix>

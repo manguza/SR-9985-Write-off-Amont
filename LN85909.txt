@@ -1,0 +1,452 @@
+     H/COPY QSYSREFRLE,COPYRIGHTH
+      ****************************************************************
+      *  FILE NAME...: LN85909           REF.NO:                     *
+      *  DESCRIPTION.: Sub File - Write-Off Amount                   *
+      *  DATE CREATED: 05.11.2022                                    *
+      *  AUTHOR......: Pruk H.                                       *
+      ****************************************************************
+      * LN85909    IS A PART OF SILVERLAKE SYSTEM (R)                *
+      *    (C) COPYRIGHT 2000                                        *
+      *    BY: SILVERLAKE SYSTEM SDN. BHD.                           *
+      *        FLOOR 12A, PLAZA IBM,                                 *
+      *        NO.1, JALAN TUN MOHD FUAD,                            *
+      *        TAMAN TUN DR. ISMAIL,                                 *
+      *        60000 KUALA LUMPUR, MALAYSIA                          *
+      ****************************************************************
+      *  MODIFICATION LOGS                                           *
+      *  NAME  INIT   DATE      REMARKS                              *
+      *  ----  -----  --------  -----------------------------------  *
+      *  K001  Team   07/11/2022 Change LNWOFDTL to LNWOFDTLL1       *
+      ****************************************************************
+     **
+      *-- VARIABLE DECLARATION --*
+     ** MBASE-Common D-Spec for Maint File Handler
+     D/COPY QMBSREFRLE,MBQTXHD
+
+     ** I/R STRUCTURE
+     D DSIROW        E DS                  EXTNAME(LN85909I) PREFIX(PI)
+     **
+     D DSWROW        E DS                  EXTNAME(LN85909R)
+     D                                     OCCURS(9999)
+     D                                     PREFIX(PR)
+      *
+     D CODE            S             20    DIM(3)
+     D VALUEC          S             40    DIM(3)
+     D VALUEN          S             19  0 DIM(3)
+     D NUM             S              1  0
+     D REC             S              1  0
+     D TYPE            S              1    DIM(3)
+      *
+     **==========================================
+     ** main logic
+     **==========================================
+     **
+     ** initialise, map header,
+     C                   EXSR      SRINIT
+     **
+     C                   SELECT
+     C                   WHEN      HDACCD = 'I'
+     C                   EXSR      SRINQ
+     C                   OTHER
+      *-- INVALID ACTION CODE --*
+     C                   EVAL      ERCODE = 'MBM2000'
+     C                   EVAL      P8MDTA = HDACCD
+     C                   EXSR      SRSENDERR
+     C                   ENDSL
+      *
+     ** initialise, map header,
+     C                   EXSR      SREXIT
+     **============================================
+     ** sr -
+     **============================================
+     CSR   SRINQ         BEGSR
+     ** inz/reset/map input
+     C                   EXSR      SRINQINZ
+     **
+     C                   EXSR      SRCVTIN
+     C                   IF        WERROR      = 'Y'
+     C                   EXSR      SRSENDERR
+     C                   LEAVESR
+     C                   ENDIF
+     **
+     ** start validation
+     C                   EXSR      SRVALIDATE
+     C                   IF        WERROR      = 'Y'
+     C                   EXSR      SRSENDERR
+     C                   LEAVESR
+     C                   ENDIF
+     **
+     ** process
+     C                   EXSR      SRPROC1
+     C                   IF        WERROR      = 'Y'
+     C                   EXSR      SRSENDERR
+     C                   LEAVESR
+     C                   ENDIF
+     **
+     C     ERINQ         ENDSR
+     **============================================
+     ** sr -
+     **============================================
+     C     SRVALIDATE    BEGSR
+     **
+     C                   EVAL      WERROR = 'Y'
+     C                   EVAL      NOKEY = 'N'
+     **
+     C     PIACCTNO      IFEQ      *ZEROS
+     C     PIACTYPE      ANDEQ     *BLANK
+     C                   MOVEL     'Y'           NOKEY             1
+     C                   ENDIF
+     **
+     C     PIACCTNO      IFNE      *ZEROS
+     C                   EVAL      REC = REC + 1
+     C                   EVAL      TYPE(REC) = 'N'
+     C                   EVAL      CODE(REC) = ' ACCTNO = '
+     C                   EVAL      VALUEN(REC) = PIACCTNO
+     C                   ENDIF
+     **
+     C     PIACTYPE      IFNE      *BLANK
+     C                   EVAL      REC = REC + 1
+     C                   EVAL      TYPE(REC) = 'C'
+     C                   EVAL      CODE(REC) = ' ACTYPE LIKE '
+     C                   EVAL      VALUEC(REC) = %TRIM(PIACTYPE) + '%'
+     C                   ENDIF
+     **
+     C                   EVAL      WERROR = 'N'
+     **
+     C     ERVALIDATE    ENDSR
+     **============================================
+     ** sr -
+     **============================================
+     C     SRCVTIN       BEGSR
+     **
+     C                   EVAL      WERROR      = 'N'
+     **
+     C     ERCVTIN       ENDSR
+     **============================================
+     ** sr -
+     **============================================
+     C     SRCVTOUT      BEGSR
+     C     ERCVTOUT      ENDSR
+     **============================================
+     ** sr -
+     **============================================
+     C     SRSQLPREP     BEGSR
+     C     ERSQLPREP     ENDSR
+     **============================================
+     ** sr -
+     **============================================
+     C     SRSQLSTMT     BEGSR
+     **
+     C*TEAM              EVAL      WSTMT = 'SELECT * '  +
+     C                   EVAL      WSTMT = 'SELECT '  +
+     C                                     'ACCTNO, ' +
+     C                                     'ACTYPE, ' +
+     C                                     'RCTYPE, ' +
+     C                                     'PWCBAL, ' +
+     C                                     'PWACCINT,' +
+     C                                     'PWBKSC, ' +
+     C                                     'PWINTR, ' +
+     C                                     'PWLC, ' +
+     C                                     'PWCOM, ' +
+     C                                     'PWOTHCHG,' +
+     C                                     'PWMISCD,' +
+     C                                     'PWRESINT,' +
+     C                                     'PWRESLC,' +
+     C                                     'PWMORINT,' +
+     C                                     'PWADVPMT,' +
+     C                                     'PWCURPO,' +
+     C                                     'PWDT8 ' +
+     C*                                    'FROM LNWOFDTL'
+     C                                     'FROM LNWOFDTLL1'
+     C
+     C     NOKEY         IFEQ      'Y'
+     C                   EVAL      WSTMT = %TRIM(WSTMT)      +
+     C                                     ' ORDER BY '      +
+     C                                     'ACCTNO' +
+     C                              ' FETCH FIRST 1000 ROW ONLY'
+     C                   ELSE
+     C                   EVAL      WSTMT = %TRIM(WSTMT)      +
+     C                                     ' WHERE'
+     **
+     C     NUM           DO        REC
+     C     NUM           IFNE      REC                                          NOT LASTS RECORD
+     C     TYPE(NUM)     IFEQ      'C'
+     C                   EVAL      WSTMT = %TRIM(WSTMT)      +
+     C                                     CODE(NUM) + WAPOS +
+     C                                     %TRIM(VALUEC(NUM)) +
+     C                                     WAPOS + ' AND '
+     C                   ELSE
+     C                   EVAL      WSTMT = %TRIM(WSTMT)      +
+     C                                     CODE(NUM) + %CHAR(VALUEN(NUM)) +
+     C                                     ' AND '
+     C                   ENDIF
+     C                   ELSE                                                   LASTS RECORD
+     C     TYPE(NUM)     IFEQ      'C'
+     C                   EVAL      WSTMT = %TRIM(WSTMT)      +
+     C                                     CODE(NUM) + WAPOS +
+     C                                     %TRIM(VALUEC(NUM)) +
+     C                                     WAPOS
+     C                   ELSE
+     C                   EVAL      WSTMT = %TRIM(WSTMT)      +
+     C                                     CODE(NUM) + %CHAR(VALUEN(NUM))
+     C                   ENDIF
+     C                   ENDIF
+     C                   EVAL      NUM   = NUM + 1
+     C                   ENDDO
+     ** Open remark and customize if need sorting
+     C                   EVAL      WSTMT = %TRIM(WSTMT)      +
+     C                                     ' ORDER BY '      +
+     C                                     'ACCTNO, ACTYPE'
+     ** Fetch 1st thousand row only
+     C                   EVAL      WSTMT = %TRIM(WSTMT) +
+     C                                     ' FETCH FIRST 1000 ROWS ONLY '
+     **
+     C                   ENDIF                                                  NOKEY = 'N'
+     **
+     C     ERSQLSTMT     ENDSR
+     **==========================================
+     ** SR -
+     **==========================================
+     C     SROUTDATA     BEGSR
+     **
+     C     1             DO        HDNREC        WX                5 0
+     C     WX            OCCUR     DSWROW
+     C                   IF        DSWROW      <> *allx'00' AND
+     C                             DSWROW      <> *allx'40'
+     C
+     C                   EXSR      SRCVTOUT
+     C
+     C                   EVAL      %SUBST(OTSTRS:WSTRLEN+1:WLEN)
+     C                             = DSWROW
+     C                   EVAL      WSTRLEN = WSTRLEN + WLEN
+     C                   ELSE
+     C                   LEAVE
+     C                   ENDIF
+     C                   ENDDO
+     **
+     C                   EVAL      HDNREC       = WX - 1
+     **
+     C     EROUTDATA     ENDSR
+     **============================================
+     ** sr -
+     **============================================
+     C     SRPROC1       BEGSR
+     **
+     C                   EVAL      WERROR      = 'N'
+     **
+     C                   EXSR      SRSQLSTMT
+     C                   EXSR      SRSQLOPEN
+     C                   IF        WERROR      = 'Y'
+     C                   LEAVESR
+     C                   ENDIF
+     ** ctrl paging
+     C                   EXSR      SRSQLPAGE
+     ** fetch block rec
+     C                   EXSR      SRSQLFETCH
+     C                   IF        WERROR      = 'Y'
+     C                   LEAVESR
+     C                   ENDIF
+     **
+     ** output data to out string
+     C                   EXSR      SROUTDATA
+     **
+     C                   EXSR      SRSQLCLOSE
+     **
+     C                   IF        HDNREC      = 0
+     C                   EVAL      ERCODE      = 'MBM2001'
+     C                   EVAL      P8MDTA      = PSPGM
+     C                   EVAL      WERROR      = 'Y'
+     C                   LEAVESR
+     C                   ENDIF
+     **
+     C     ERPROC1       ENDSR
+     **===========================================
+     ** MBASE-Common C-Spec for Maint File Handler
+     C/COPY QMBSREFRLE,MBQTXHC
+     **===========================================
+     **
+     **===========================================
+     C     SRINZSR       BEGSR
+     **
+     C     PLSSRTBL      PLIST
+     C                   PARM                    P8TBL            10
+     C                   PARM                    P8RTN           256
+     C                   PARM                    P8ERR             1
+     **
+     ** Date conversion routine (Data Base 8 -> Screen 8)
+     C     PLSSDATV      PLIST
+     C                   PARM                    PIDAT8            8 0
+     C                   PARM                    PODAT8            8 0
+     C                   PARM                    ERR               1
+     **
+     ** Date conversion routine (Screen 8 -> Data Base 8)
+     C     PLSSDATU      PLIST
+     C                   PARM                    PIDAT8            8 0
+     C                   PARM                    PODAT8            8 0
+     C                   PARM                    ERR               1
+     **
+     ** rtv clpar1
+     C/exec sql
+     C+ DECLARE C2 SCROLL CURSOR FOR SELECT CP1NB8 FROM CLPAR1
+     C/end-exec
+     C/EXEC SQL
+     C+ OPEN C2
+     C/END-EXEC
+     C/EXEC SQL
+     C+ FETCH FIRST FROM C2 INTO :SSPDT8
+     C/END-EXEC
+     C/EXEC SQL
+     C+ CLOSE C2
+     C/END-EXEC
+     **
+     C     ERINZSR       ENDSR
+     **===========================================
+     ** sr - application exit program
+     **===========================================
+     C     SREXITAPP     BEGSR
+     **
+     C     EREXITAPP     ENDSR
+     **===========================================
+     ** sr -
+     **===========================================
+     C     SRINQINZ      BEGSR
+     ** map input response
+     C                   EVAL      DSIROW      = INSTRS
+     C                   EVAL      WLEN        = %SIZE(DSWROW)
+     C                   EVAL      WSTRLEN     = 0
+     C                   EVAL      NUM         = 1
+     C                   EVAL      TYPE        = ' '
+     C                   EVAL      REC         = 0
+     ** reset dswrow
+     C                   FOR       WX          = 1 to %ELEM(DSWROW)
+     C     WX            OCCUR     DSWROW
+     C                   RESET                   DSWROW
+     C                   ENDFOR
+     ** wll - handle hdnrec exception
+     C                   IF        HDNREC     >
+     C                             (%SIZE(MB_MBDETL) / %SIZE(DSWROW))
+     C                   EVAL      HDNREC     =
+     C                             (%SIZE(MB_MBDETL) / %SIZE(DSWROW))
+     C                   ENDIF
+     **
+     C     ERINQINZ      ENDSR
+     **==========================================
+     ** SR -
+     **==========================================
+     C     SRSQLOPEN     BEGSR
+     **
+     C/EXEC SQL
+     C+  PREPARE S1 FROM :WSTMT
+     C/END-EXEC
+     **
+     ** declare cursor
+     C/exec sql
+     C+ DECLARE C1 INSENSITIVE SCROLL CURSOR FOR S1
+     C/end-exec
+     **
+     C                   IF        SQLCODE < 0
+     C                   EVAL      ERCODE      = 'SQL0001'
+     C                   EVAL      P8MDTA      = PSPGM
+     C                   EVAL      WERROR      = 'Y'
+     C                   EXSR      SRSQLCLOSE
+     C                   LEAVESR
+     C                   ENDIF
+     **
+     C/EXEC SQL
+     C+ OPEN C1
+     C/END-EXEC
+     **
+     C                   IF        SQLCODE < 0
+     C                   EVAL      ERCODE      = 'SQL0001'
+     C                   EVAL      P8MDTA      = PSPGM
+     C                   EVAL      WERROR      = 'Y'
+     C                   EXSR      SRSQLCLOSE
+     C                   LEAVESR
+     C                   ENDIF
+     C     ERSQLOPEN     ENDSR
+     **==========================================
+     ** SR -
+     **==========================================
+     C     SRSQLPAGE     BEGSR
+     **
+     C                   IF        HDMREC      = 'N'
+     ** if open b4, use save total rrn instead of from sqlca
+     C                   IF        WS3OPEN     = 'Y'
+     C                   EVAL      WTOTREC     = WSAVTOTREC
+     C                   ELSE
+     C                   EVAL      WTOTREC     = SQLER2
+     C                   ENDIF
+     **
+     C     WTOTREC       DIV       HDNREC        WTOTPG
+     C                   MVR                     WMVR
+     C                   IF        WMVR        > 0
+     C                   EVAL      WTOTPG      = WTOTPG + 1
+     C                   ENDIF
+     **
+     C                   EVAL      SHDVFMT_IND   = 'P'
+     C                   EVAL      SHDVFMT_CURPG = 1
+     C                   EVAL      SHDVFMT_TOTPG = WTOTPG
+     **
+     C                   EVAL      WRRN        = 1
+     **
+     C                   IF        WTOTPG      > 1
+     C                   EVAL      HDMREC      = 'Y'
+     C                   ENDIF
+     **
+     C                   ELSE
+     **
+     C                   EVAL      SHDVFMT     = HDVFMT
+     C                   IF        HDSMTD      = 'F'
+     C                   EVAL      WRRN        = (SHDVFMT_CURPG * HDNREC) + 1
+     C                   EVAL      SHDVFMT_CURPG=SHDVFMT_CURPG+1
+     C                   ELSE
+     C                   EVAL      WRRN        = ((SHDVFMT_CURPG-2)*HDNREC)+1
+     C                   IF        WRRN<0
+     C                   EVAL      WRRN=1
+     C                   EVAL      SHDVFMT_CURPG=1
+     C                   ELSE
+     C                   EVAL      SHDVFMT_CURPG=SHDVFMT_CURPG-1
+     C                   ENDIF
+     C                   ENDIF
+     **
+     C                   IF        SHDVFMT_CURPG >= SHDVFMT_TOTPG
+     C                   EVAL      HDMREC      = 'N'
+     C                   ENDIF
+     C                   ENDIF
+     **
+     C                   EVAL      HDVFMT = SHDVFMT
+     **
+     C     ERSQLPAGE     ENDSR
+     **==========================================
+     ** SR -
+     **==========================================
+     C     SRSQLFETCH    BEGSR
+     **
+     C/EXEC SQL
+     C+ FETCH RELATIVE :WRRN FROM C1 FOR :HDNREC ROWS INTO :DSWROW
+     C/END-EXEC
+     **
+     **
+     C                   EVAL      OTSTRS=*BLANKS
+     **
+     C                   IF        SQLSTT = SqlEOF
+     C                   EVAL      HDNREC      = 0
+     C                   EVAL      ERCODE      = 'MBM2001'
+     C                   EVAL      P8MDTA      = PSPGM
+     C                   EVAL      WERROR      = 'Y'
+     C                   EXSR      SRSQLCLOSE
+     C                   LEAVESR
+     C                   ENDIF
+     **
+     C     ERSQLFETCH    ENDSR
+     **==========================================
+     ** SR -
+     **==========================================
+     C     SRSQLCLOSE    BEGSR
+     **
+     C/EXEC SQL
+     C+ CLOSE C1
+     C/END-EXEC
+     **
+     C     ERSQLCLOSE    ENDSR
+

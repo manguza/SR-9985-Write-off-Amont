@@ -1,0 +1,467 @@
+     H/COPY QSYSREFRLE,COPYRIGHTH
+     H/COPY QMBSREFRLE,MBQTXHH
+      ****************************************************************
+      *  FILE NAME...: LN88909           REF.NO:                     *
+      *  DESCRIPTION.: Maintenance - Loan WRITE OFF ACCOUNT          *
+      *  DATE CREATED: 15/08/2022                                    *
+      *  AUTHOR......: Kritsanu D.                                  *
+      ****************************************************************
+      * LN88909    IS A PART OF SILVERLAKE SYSTEM (R)                *
+      *    (C) COPYRIGHT 2000                                        *
+      ****************************************************************
+      *  MODIFICATION LOGS : CIMB Hubbing                            *
+      *  NAME  INIT   DATE      REMARKS                              *
+      *  K001  TEAM  07/11/2022  Update RCTYPE = D When Delete       *
+      *  K002  PRUK  23/11/2022  Add MNT log for EXSR Delete         *
+      *  K003  PRUK  24/11/2022  Rename Field MNT log For LNMAST     *
+      ****************************************************************
+      *-- FILE DECLARATION --*
+     FLNWOFDTL  UF A E           K DISK    INFDS(PRPRDS)
+     F                                     COMMIT
+K003 FLNMAST    IF   E           K DISK    PREFIX(M_)
+     FLNTNEW    IF   E           K DISK    RENAME(RLNMAST:RLNTNEW)
+K003 F                                     PREFIX(T_)
+     FLNPAR1    IF   E             DISK
+     **
+     ** MBASE-Common D-Spec for Maint File Handler
+     D/COPY QMBSREFRLE,MBQTXHD
+     ** LOANS-Common D-Spec for Maint File Handler
+     D/COPY QLNSREFRLE,LNQTXHD
+     ** MBASE-Checker and Maker
+     D/COPY QMBSREFRLE,MBQCMLOGD
+     ** D-Spec to Retrieve Error Description from MBAMSG
+     D/COPY QCLMREFRLE,CLQMAKERD
+     **
+     D MNTLNWOFDTL     DS                  LIKEREC(RLNWOFDTL) DIM(2)
+      *
+     D PRPRDS          DS
+     D  INFILE                83     92
+     D  LENLNWOFDTL          125    126B 0
+     D  DB_RRN               397    400I 0
+      *
+     D DS88909I      E DS                  EXTNAME(LN88909I) PREFIX(PR1)
+     D DS88909R      E DS                  EXTNAME(LN88909R)
+      *
+     D RESET_DS        DS           100
+     **
+     D SYNCerror       S              1A
+     **
+     C     KYLNWOFDTL    KLIST
+     C                   KFLD                    PR1ACCTNO
+     C                   KFLD                    PR1ACTYPE
+     C                   KFLD                    PR1RCTYPE
+     C                   KFLD                    PR1PWDT8
+     C*
+     C     KYLNMAST      KLIST
+     C                   KFLD                    PR1ACCTNO
+     **
+     **
+     C                   EXSR      SRINIT
+      *
+     C                   EXSR      SRCLROCR
+      *
+     C                   READ      LNPAR1
+      *
+     C                   SELECT
+      *
+     C                   WHEN      HDACCD = 'A'
+     C                   EXSR      SRADD
+      *
+     C                   WHEN      HDACCD = 'C'
+     C                   EXSR      SRCHG
+      *
+     C                   WHEN      HDACCD = 'D'
+     C                   EXSR      SRDLT
+      *
+     C                   OTHER
+      *-- ERROR
+     C                   EVAL      ERCODE = 'MBM2000'
+     C                   EVAL      P8MDTA = HDACCD
+     C                   EVAL      ERFLDN = *BLANKS
+     C                   EXSR      SRSENDERR
+      *
+     C                   ENDSL
+      *
+      * Release record lock for all file open for update.
+     C                   UNLOCK    LNWOFDTL
+      *
+     C                   EXSR      SREXIT
+      ****************************************************************
+      *  SUBROUTINE: SRADD                                           *
+      *  PURPOSE   : ADD SUBROUTINE TO WRITE RECORD TO THE FILE      *
+      ****************************************************************
+     CSR   SRADD         BEGSR
+     ** MAP INPUT RESPONE
+     C                   EVAL      DS88909I   = INSTRS
+     C                   EVAL      PR1RCTYPE  = 'A'
+     C                   EXSR      SRCVTIN
+     C                   EVAL      DS88909R   = DS88909I
+     C
+     ** map reset struc
+     C                   EVAL      RESET_DS   = HDVFMT
+     **
+     **
+     C     KYLNWOFDTL    CHAIN     RLNWOFDTL                          31
+     C     *IN31         IFEQ      '0'
+      *-- ERROR RETURN - DUPLICATE --*
+     C                   EVAL      ERCODE = 'MBM2002'
+     C                   EVAL      P8MDTA = PSPGM
+     C                   EVAL      ERFLDN      = *BLANKS
+     C                   EXSR      SRSENDERR
+     C                   LEAVESR
+     C                   ELSE
+     ** start validation
+     C                   EXSR      SRVALIDATE
+     C                   IF        WERROR = 'Y'
+     C                   EXSR      SRSENDERR
+     C                   LEAVESR
+     C                   ENDIF
+     **
+     ** map fld for response purpose
+     C                   EVAL      OTSTRS = DS88909R
+     **
+     C                   SELECT
+     C                   WHEN      HDTXMD = 'MK'
+     C                   Eval      CM_SKYD = 'Write-Off Amount: ' +
+     C                             %EDITC(PR1ACCTNO:'X') +
+     C                             %CHAR(PR1ACTYPE) +
+     C                             %CHAR(PR1RCTYPE) +
+     C                             %EDITC(PR1PWDT8:'X')
+     C                   Eval      CM_SKYV = %EDITC(PR1ACCTNO:'X') +
+     C                                       %CHAR(PR1ACTYPE) +
+     C                                       %CHAR(PR1RCTYPE) +
+     C                                       %EDITC(PR1PWDT8:'X')
+     C                   EXSR      SROVRMSG
+     C                   EXSR      SRMAKER
+     C                   IF        CM_ERR <> *BLANKS
+     C                   EVAL      ERFLDN      = *BLANKS
+     C                   EXSR      SRSENDERR
+     C                   LEAVESR
+     C                   ENDIF
+     C
+     C                   WHEN      HDTXMD = 'RJ'
+     C                   LEAVESR
+      *
+     C                   OTHER
+     C*
+     C                   EVAL      MNLUID = HDUSID
+     C                   EVAL      MNLWID = 'LN87909'
+     C                   EVAL      MNLDT8 = LP1NB8
+     C                   TIME                    MNLTIM
+     C                   EVAL      MNCUID = HDUSID
+     C                   EVAL      MNCWID = 'LN87909'
+     C                   EVAL      MNCDT8 = LP1NB8
+     C                   TIME                    MNCTIM
+     C
+     C                   WRITE     RLNWOFDTL                            31
+     ** maint log
+     ** Load New Data for Maintenance Log
+     C     KYLNWOFDTL    CHAIN(N)  RLNWOFDTL     MNTLNWOFDTL(1)       31
+     C                   EVAL      MNTREQ = '*ADD'
+     C                   EXSR      SRMNTCTL
+      *
+     C                   EXSR      SRCVTOUT
+     **
+     C                   IF        *IN31 = *ON
+      *-- ERROR RETURN - DUPLICATE --*
+     C                   EVAL      ERCODE = 'MBM2002'
+     C                   EVAL      P8MDTA = PSPGM
+     C                   EVAL      ERFLDN = *BLANKS
+     C                   EXSR      SRSENDERR
+     C                   LEAVESR
+     C                   ENDIF
+     C                   ENDSL
+     ** map fld for response purpose
+     C                   EVAL      OTSTRS = DS88909R
+     C                   ENDIF
+     CSR   ENDADD        ENDSR
+      ****************************************************************
+      *  SUBROUTINE: SRCHG                                           *
+      *  PURPOSE   : CHG SUBROUTINE TO CHANGE RECORD TO THE FILE     *
+      ****************************************************************
+     CSR   SRCHG         BEGSR
+     ** MAP INPUT RESPONE
+     C                   EVAL      DS88909I   = INSTRS
+     C                   EVAL      DS88909R   = DS88909I
+     ** map reset struc
+     C                   EVAL      RESET_DS   = HDVFMT
+     **
+     ** Load Old Data for Maintenance Log
+     C                   IF        HDNXTA     <> 'P'
+     C     KYLNWOFDTL    CHAIN(N)  RLNWOFDTL     MNTLNWOFDTL(2)       31
+     C                   EVAL      INFILE = 'LNWOFDTL'
+     C                   ENDIF
+      *-- READ FIRST RECORDS --*
+     C     KYLNWOFDTL    CHAIN     RLNWOFDTL                          31
+     C                   IF        *IN31 = *ON
+     **
+      *-- ERROR RETURN - DUPLICATE --*
+     C                   EVAL      ERCODE = 'MBM2003'
+     C                   EVAL      P8MDTA = PSPGM
+     C                   EVAL      ERFLDN      = *BLANKS
+     C                   EXSR      SRSENDERR
+     C                   LEAVESR
+     C                   ELSE
+     ** re-map input response, after chain file
+     C                   EVAL      DS88909R      = DS88909I
+     C* Cvt 8 Digit Date To 6/7 Date
+     C                   EXSR      SRCVTIN
+      *
+     ** start validation
+     C                   EXSR      SRVALIDATE
+     C                   IF        WERROR = 'Y'
+     C                   EXSR      SRSENDERR
+     C                   LEAVESR
+     C                   ENDIF
+      *
+     C                   SELECT
+     C                   WHEN      HDTXMD = 'MK'
+     C                   Eval      CM_SKYD = 'Write-Off Amount: ' +
+     C                             %EDITC(PR1ACCTNO:'X') +
+     C                             %CHAR(PR1ACTYPE) +
+     C                             %CHAR(PR1RCTYPE) +
+     C                             %EDITC(PR1PWDT8:'X')
+     C                   Eval      CM_SKYV = %EDITC(PR1ACCTNO:'X') +
+     C                                       %CHAR(PR1ACTYPE) +
+     C                                       %CHAR(PR1RCTYPE) +
+     C                                       %EDITC(PR1PWDT8:'X')
+     C                   EXSR      SROVRMSG
+     C                   EXSR      SRMAKER
+     C                   IF        CM_ERR <> *BLANKS
+     C                   EVAL      ERFLDN      = *BLANKS
+     C                   EXSR      SRSENDERR
+     C                   LEAVESR
+     C                   ENDIF
+     C
+     C                   WHEN      HDTXMD = 'RJ'
+     C                   LEAVESR
+      *
+     C                   OTHER
+     C*
+     C                   EVAL      MNLUID = HDUSID
+     C                   EVAL      MNLWID = 'LN88909'
+     C                   EVAL      MNLDT8 = LP1NB8
+     C                   TIME                    MNLTIM
+     C*
+     C                   UPDATE    RLNWOFDTL
+     ** release lock
+     C                   EXSR      SRRELLOCK
+     **
+     C                   IF        HDNXTA      <> 'C'
+     C     KYLNWOFDTL    CHAIN(N)  RLNWOFDTL     MNTLNWOFDTL(1)       31
+     C                   EVAL      MNTREQ = '*MAINT'
+     C                   EXSR      SRMNTCTL
+     C                   ENDIF
+     C                   ENDSL
+      *
+     C                   ENDIF
+      *
+     C                   EXSR      SRCVTOUT
+      *
+     C                   EVAL      OTSTRS        = DS88909R
+      *
+     **
+     CSR   ENDCHG        ENDSR
+     ****************************************************************
+     ** SUBROUTINE: SRDLT                                           *
+     ** PURPOSE   : DLT SUBROUTINE TO DELETE RECORD TO THE FILE     *
+     ****************************************************************
+     CSR   SRDLT         BEGSR
+     ** MAP INPUT RESPONE
+     C                   EVAL      DS88909I   = INSTRS
+     C                   EVAL      DS88909R   = DS88909I
+     **
+      *-- READ FIRST RECORDS --*
+     C     KYLNWOFDTL    CHAIN(N)  RLNWOFDTL     MNTLNWOFDTL(1)       31
+     C     KYLNWOFDTL    CHAIN     RLNWOFDTL                          31
+      *
+     C                   IF        *IN31 = *OFF
+      *
+     C                   SELECT
+     C                   WHEN      HDTXMD = 'MK'
+     C                   Eval      CM_SKYD = 'Write-Off Amount: ' +
+     C                             %EDITC(PR1ACCTNO:'X') +
+     C                             %CHAR(PR1ACTYPE) +
+     C                             %CHAR(PR1RCTYPE) +
+     C                             %EDITC(PR1PWDT8:'X')
+     C                   Eval      CM_SKYV = %EDITC(PR1ACCTNO:'X') +
+     C                                       %CHAR(PR1ACTYPE) +
+     C                                       %CHAR(PR1RCTYPE) +
+     C                                       %EDITC(PR1PWDT8:'X')
+     C                   EXSR      SRMAKER
+     C                   IF        CM_ERR <> *BLANKS
+     C                   EVAL      ERFLDN      = *BLANKS
+     C                   EXSR      SRSENDERR
+     C                   LEAVESR
+     C                   ENDIF
+     C
+     C                   WHEN      HDTXMD = 'RJ'
+     C                   LEAVESR
+      *
+     C                   OTHER
+K002 C*
+     C                   EVAL      RCTYPE = 'D'
+K002 C*
+K002 C                   EVAL      MNLUID = HDUSID
+K002 C                   EVAL      MNLWID = 'LN89909'
+K002 C                   EVAL      MNLDT8 = LP1NB8
+K002 C                   TIME                    MNLTIM
+K002 C*
+     C                   UPDATE    RLNWOFDTL                            42
+     C*K001              DELETE    RLNWOFDTL                            42
+     ** release lock
+     C                   EXSR      SRRELLOCK
+     C                   EVAL      MNTREQ = '*DELETE'
+     C                   EXSR      SRMNTCTL
+     C                   ENDSL
+      **
+     C                   EVAL      OTSTRS = DS88909R
+     C                   ENDIF
+      *
+     C                   IF        (*IN31 = *ON) OR
+     C                             (*IN42 = *ON)
+     C                   EVAL      ERCODE = 'MBM2004'
+     C                   EVAL      P8MDTA = PSPGM
+     C                   EXSR      SRSENDERR
+     C                   LEAVESR
+     C                   ENDIF
+      *
+     CSR   ENDDLT        ENDSR
+     C*****************************************************************
+     C*    SUBROUTINE :
+     C*    PURPOSE    : SRVALIDATE IS TO VALIDATE THE DATA KEY IN
+     C*****************************************************************
+     C     SRVALIDATE    BEGSR
+     C                   EVAL      WERROR      = 'Y'
+     C                   EVAL      WOVR        = *BLANK
+     C                   EVAL      WOVRPOS     = *ALLX'00'
+     **
+     C     PR1ACCTNO     IFEQ      *ZERO
+     C                   EVAL      ERCODE      = 'MBL0830'
+     C                   EVAL      P8MDTA      = *BLANKS
+     C                   EVAL      ERFLDN      = 'ACCTNO'
+     C                   LEAVESR
+     C                   ENDIF
+     **
+     C     PR1PWCBAL     IFEQ      *ZERO
+     C                   EVAL      ERCODE      = 'MBL0830'
+     C                   EVAL      P8MDTA      = *BLANKS
+     C                   EVAL      ERFLDN      = 'PWCBAL'
+     C                   LEAVESR
+     C                   ENDIF
+     **
+     C     PR1PWCBAL     IFLT      *ZERO
+     C                   EVAL      ERCODE      = 'MBL9999'
+     C                   EVAL      P8MDTA      = 'PWCBAL Cannot key in < 0'
+     C                   EVAL      ERFLDN      = 'PWCBAL'
+     C                   LEAVESR
+     C                   ENDIF
+     **
+     C     PR1PWACCINT   IFEQ      *ZERO
+     C                   EVAL      ERCODE      = 'MBL0830'
+     C                   EVAL      P8MDTA      = *BLANKS
+     C                   EVAL      ERFLDN      = 'PWACCINT'
+     C                   LEAVESR
+     C                   ENDIF
+     **
+     C     PR1PWACCINT   IFLT      *ZERO
+     C                   EVAL      ERCODE      = 'MBL9999'
+     C                   EVAL      P8MDTA      = 'PWCBAL Cannot key in < 0'
+     C                   EVAL      ERFLDN      = 'PWCBAL'
+     C                   LEAVESR
+     C                   ENDIF
+     **
+     C     PR1PWDT8      IFEQ      *ZERO
+     C     PR1PWDT8      ORLT      *ZERO
+     C                   EVAL      ERCODE      = 'MBL0830'
+     C                   EVAL      P8MDTA      = *BLANKS
+     C                   EVAL      ERFLDN      = 'PWDT8'
+     C                   LEAVESR
+     C                   ENDIF
+     **
+     C                   EVAL      WERROR = 'N'
+     **
+     C     ERVALIDATE    ENDSR
+     **============================================
+     ** sr -
+     **============================================
+     C     SRRTVINFO     BEGSR
+     C     ERRTVINFO     ENDSR
+     **============================================
+     ** sr -
+     **============================================
+     C     SRCLROCR      BEGSR
+     **
+     C                   CLEAR                   MNTLNWOFDTL
+     **
+     C     ERCLROCR      ENDSR
+     **============================================
+     ** sr - move into buffer
+     **============================================
+     C     SRMOVBUFF     BEGSR
+     **
+     C                   CLEAR                   BUFFER
+     **
+     ** Load Bank/Branch
+     C                   SELECT
+     **
+     C                   WHEN      INFILE      = 'LNWOFDTL'
+     ** Omit Fields from Maintenance Log
+     C                   DO        2             W1                1 0
+     C                   ENDDO
+     C* Fill Buffer
+     C                   Eval      %SUBST(BUFFER:1:LENLNWOFDTL)         =
+     C                             MNTLNWOFDTL(2)
+     C                   Eval      %SUBST(BUFFER:1+LENLNWOFDTL:LENLNWOFDTL) =
+     C                             MNTLNWOFDTL(1)
+     C                   ENDSL
+     **
+     C                   ENDSR
+     **============================================
+     ** sr - SRGETERRID - To get the Error Message ID based on the position
+     **============================================
+     C     SRGETERRID    BEGSR
+     **
+     C     ERGETERRID    ENDSR
+     **====================================================
+     ** sr - Convert Date to 6/7 Digits, Convert Percentage
+     **====================================================
+     C     SRCVTIN       BEGSR
+     **
+     C     KYLNMAST      CHAIN(N)  RLNTNEW
+     C                   IF        %FOUND(LNTNEW)
+     C                   EVAL      PR1ACTYPE  = T_ACTYPE
+     C                   ELSE
+     C     KYLNMAST      CHAIN(N)  RLNMAST
+     C                   IF        %FOUND(LNMAST)
+     C                   EVAL      PR1ACTYPE  = M_ACTYPE
+     C                   ENDIF
+     C                   ENDIF
+     **
+     C     ERCVTIN       ENDSR
+     **============================================
+     ** sr - SRCVTOUT
+     **============================================
+     C     SRCVTOUT      BEGSR
+     **
+     **
+     C     ERCVTOUT      ENDSR
+      *--------------------------------------------- END OF CODING --*
+     ** MBASE-Release Lock
+     C/COPY QMBSREFRLE,MBQRLS
+     ** MBASE-Common C-Spec for Maint File Handler
+     C/COPY QMBSREFRLE,MBQTXHC
+     ** LOANS-Common C-Spec for Maint File Handler
+     C/COPY QLNSREFRLE,LNQTXHC
+     ** MBASE-Maint Log
+     C/COPY QMBSREFRLE,MBQMNTLOG
+     ** MBASE-sync
+     C/COPY QMBSREFRLE,MBQSYNC
+     C* MBASE-Checker and Maker
+     C/COPY QMBSREFRLE,MBQCMLOG
+     ** C-Spec to Retrieve Error Description from MBAMSG
+     C/COPY QCLMREFRLE,CLQMAKERC
+     ** P-Spec to Retrieve Error Description from MBAMSG
+     P/COPY QCLMREFRLE,CLQMAKERP
+
+

@@ -1,0 +1,1385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Phoenix Type="RecordMap" Name="LN86838O" Standard="Fixed">
+<Fields>
+<Element Id="@O1_ACCTNO" Type="2" Length="19" Decimal="0"/>
+<Element Id="@O1_ACTYPE" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_CIFNO" Type="2" Length="19" Decimal="0"/>
+<Element Id="@O1_BRN" Type="2" Length="5" Decimal="0"/>
+<Element Id="@O1_BRNAME" Type="5" Length="20" Decimal="0"/>
+<Element Id="@O1_CURTYP" Type="5" Length="4" Decimal="0"/>
+<Element Id="@O1_MCLFLG" Type="5" Length="8" Decimal="0"/>
+<Element Id="@O1_MCLNID" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_PARTID" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_TYPE" Type="5" Length="10" Decimal="0"/>
+<Element Id="@O1_PTYDSC" Type="5" Length="50" Decimal="0"/>
+<Element Id="@O1_AANO" Type="2" Length="19" Decimal="0"/>
+<Element Id="@O1_FCODE" Type="5" Length="10" Decimal="0"/>
+<Element Id="@O1_FSEQ" Type="2" Length="5" Decimal="0"/>
+<Element Id="@O1_SUSACT" Type="2" Length="19" Decimal="0"/>
+<Element Id="@O1_LPLSNM" Type="5" Length="20" Decimal="0"/>
+<Element Id="@O1_AFCPNO" Type="5" Length="20" Decimal="0"/>
+<Element Id="@O1_CBAL" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_ORGAMT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_AMTREL" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_ASSLC" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_INTDUE" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_LCDUE" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_CFDUE" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_RIODUE" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_RLCDUE" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_MORDUE" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_OTHCHG" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_MISCD" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_RESINT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_MORINT" Reference="ETP.TRANSACTION_AMOUNT19_5O"/>
+<Element Id="@O1_RESLC" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_ADVPMT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_AVLIMT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_HOLD" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_AVLBAL" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_XOSBAL" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_AVBLOW" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_AVBAPW" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_ACCINT" Reference="ETP.TRANSACTION_AMOUNT19_5O"/>
+<Element Id="@O1_PENINT" Reference="ETP.TRANSACTION_AMOUNT19_5O"/>
+<Element Id="@O1_COMACC" Reference="ETP.TRANSACTION_AMOUNT19_5O"/>
+<Element Id="@O1_MEMAMT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_PMTCOD" Type="2" Length="1" Decimal="0"/>
+<Element Id="@O1_PMTAMT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_FNLPMT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_PRTPMT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_PPRPMT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_PINPMT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_PMIPMT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_PRIPMT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_DRLIMT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_CURPO" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_PFBAL" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_UNDRWN" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_LKCLAS" Type="5" Length="5" Decimal="0"/>
+<Element Id="@O1_LNSPTF" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_CURDEC" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_TOTOSB" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_TOTWOF" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_TOTWDV" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_YSCBAL" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_YSOTHC" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_YSMISC" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_YSASLC" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_YSPDLC" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_YSACCI" Reference="ETP.TRANSACTION_AMOUNT19_5O"/>
+<Element Id="@O1_YSACLC" Reference="ETP.TRANSACTION_AMOUNT19_5O"/>
+<Element Id="@O1_YSACCF" Reference="ETP.TRANSACTION_AMOUNT19_5O"/>
+<Element Id="@O1_YSACDL" Reference="ETP.TRANSACTION_AMOUNT19_5O"/>
+<Element Id="@O1_BILPOG" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_BILPOS" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_BILPOF" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_TERM" Type="2" Length="5" Decimal="0"/>
+<Element Id="@O1_TMCODE" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_IBASE" Type="2" Length="1" Decimal="0"/>
+<Element Id="@O1_IFREQ" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_ROTERM" Type="2" Length="5" Decimal="0"/>
+<Element Id="@O1_ROTMCD" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_RATE" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_FREQ" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_FRCODE" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_IPFREQ" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_IPCODE" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_MATRAT" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_MATDLR" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_MATRTN" Type="2" Length="5" Decimal="0"/>
+<Element Id="@O1_MATPVR" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_MATPVC" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_MATFLR" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_MATCEL" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_MATPD8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_MATPRT" Type="2" Length="5" Decimal="0"/>
+<Element Id="@O1_MATPRC" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_MATPDY" Type="2" Length="2" Decimal="0"/>
+<Element Id="@O1_NACDT8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_DLRMTD" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_EXMPT" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_PDIEM" Reference="ETP.TRANSACTION_AMOUNT19_5O"/>
+<Element Id="@O1_PDACLC" Reference="ETP.TRANSACTION_AMOUNT19_5O"/>
+<Element Id="@O1_PDACCF" Reference="ETP.TRANSACTION_AMOUNT19_5O"/>
+<Element Id="@O1_PDACDL" Reference="ETP.TRANSACTION_AMOUNT19_5O"/>
+<Element Id="@O1_PRATEN" Type="2" Length="5" Decimal="0"/>
+<Element Id="@O1_ACCIN2" Reference="ETP.TRANSACTION_AMOUNT19_5O"/>
+<Element Id="@O1_PVCODE" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_PVARI" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_LCTYPE" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_LCRATE" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_LCGRC" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_LCGRCI" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_LCITYP" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_LCIRAT" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_LCIGRC" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_LCIGRI" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_PFLOOR" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_PCEIL" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_PRVDAY" Type="2" Length="2" Decimal="0"/>
+<Element Id="@O1_PREVD8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_PRTERM" Type="2" Length="5" Decimal="0"/>
+<Element Id="@O1_PRCODE" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_RRTERM" Type="2" Length="5" Decimal="0"/>
+<Element Id="@O1_RRCODE" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_PREBAL" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_TCHAMT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_YBASE" Type="2" Length="1" Decimal="0"/>
+<Element Id="@O1_YBSEL" Type="2" Length="1" Decimal="0"/>
+<Element Id="@O1_DLRATE" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_DLRACC" Reference="ETP.TRANSACTION_AMOUNT19_5O"/>
+<Element Id="@O1_ITYPE" Type="5" Length="10" Decimal="0"/>
+<Element Id="@O1_RREVD8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_RRVDAY" Type="2" Length="2" Decimal="0"/>
+<Element Id="@O1_ACCLCF" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_ACCMLC" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_MEMOLC" Reference="ETP.TRANSACTION_AMOUNT19_5O"/>
+<Element Id="@O1_ACCMIN" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_ACCMOR" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_LNLCDY" Type="2" Length="2" Decimal="0"/>
+<Element Id="@O1_LNLCN8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_LNLCS8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_LNLCFR" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_LNLCFC" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_CLCD" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_DANLC" Type="2" Length="2" Decimal="0"/>
+<Element Id="@O1_UPLCB" Type="2" Length="2" Decimal="0"/>
+<Element Id="@O1_POMCLB" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_POMFLG" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_POMARR" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_POMATC" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_POMRAT" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_POMRTN" Type="2" Length="5" Decimal="0"/>
+<Element Id="@O1_POMVRI" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_POMVRC" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_APRATE" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_EFRATE" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_PRCPKI" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_MULTIR" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_MIAFCA" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_MXAFCA" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_MIMEST" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_MXMEST" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_MIMPRP" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_MXMPRP" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_MIMFRP" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_MXMFRP" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_CAREAN" Type="5" Length="2" Decimal="0"/>
+<Element Id="@O1_USERP" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_RPSEQ" Type="2" Length="9" Decimal="0"/>
+<Element Id="@O1_STDRAT" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_STDRTN" Type="2" Length="5" Decimal="0"/>
+<Element Id="@O1_STDVAR" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_STDVAC" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_STDNUM" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_STNRP8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_STMBAL" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_STMDT8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_NEWPMT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_NWPMD8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_LSTPMT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_LPDT8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_UMDDB" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_NSPDT8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_NSIPD8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_NPDT8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_NIPDT8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_ORGDT8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_DATOP8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_FULLD8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_FRELD8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_FPDT8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_ORGMD8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_FMATD8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_MATDT8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_NREVD8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_STATUS" Type="2" Length="1" Decimal="0"/>
+<Element Id="@O1_STSDT8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_POFFD8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_TYPCLS" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_EXAMD8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_LREBD8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_NREBD8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_NPDAY" Type="2" Length="2" Decimal="0"/>
+<Element Id="@O1_NIPDAY" Type="2" Length="2" Decimal="0"/>
+<Element Id="@O1_LFEXD8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_LEXCD8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_BALLON" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_MNLDT8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_CARCD" Type="5" Length="2" Decimal="0"/>
+<Element Id="@O1_NPLFLG" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_NPLSTA" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_NPLDT8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_NPLRSN" Type="5" Length="60" Decimal="0"/>
+<Element Id="@O1_JDACCR" Reference="ETP.TRANSACTION_AMOUNT19_5O"/>
+<Element Id="@O1_JDIND" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_RECALL" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_RCLDT8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_RCLEF8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_CLSRSN" Type="5" Length="6" Decimal="0"/>
+<Element Id="@O1_LNCARP" Type="5" Length="2" Decimal="0"/>
+<Element Id="@O1_LNCSD8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_REFFRM" Type="5" Length="20" Decimal="0"/>
+<Element Id="@O1_REFTO" Type="5" Length="20" Decimal="0"/>
+<Element Id="@O1_LNCSP8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_INTSUP" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_LCSUP" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_N_INTSUP" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_N_LCSUP" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_INB4SP" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_LCB4SP" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_IISTAX" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_IISNTX" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_IB4NTX" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_RINSUP" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_RISTAX" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_RISNTX" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_PDTOD8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_MFRATE" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_MFMORT" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_MFMIAM" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_MFMMAM" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_MRFLAG" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_MRSTR8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_MREXP8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_IPMTAM" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_IPMTPC" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_MIPMTA" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_RIPMTA" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_PPMTAM" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_RNPLPR" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_RNPCNT" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_SPPROV" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_LMPROV" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_YSACMI" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_YSACMM" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_YSMMMI" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_PFMEAR" Reference="ETP.TRANSACTION_AMOUNT19_5O"/>
+<Element Id="@O1_PPMEAR" Reference="ETP.TRANSACTION_AMOUNT19_5O"/>
+<Element Id="@O1_SUPFLG" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_SUPSTA" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_YSSUPS" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_SUPDT8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_PSUPD8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_LNPLD8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_PNPLD8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_TDACCI" Reference="ETP.TRANSACTION_AMOUNT19_5O"/>
+<Element Id="@O1_TDACLC" Reference="ETP.TRANSACTION_AMOUNT19_5O"/>
+<Element Id="@O1_TDACCF" Reference="ETP.TRANSACTION_AMOUNT19_5O"/>
+<Element Id="@O1_TDACDL" Reference="ETP.TRANSACTION_AMOUNT19_5O"/>
+<Element Id="@O1_CARFLG" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_SPAAMT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_CARTP" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_DEMSTU" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_PURCOD" Type="5" Length="2" Decimal="0"/>
+<Element Id="@O1_GROUP" Type="2" Length="5" Decimal="0"/>
+<Element Id="@O1_CLASS" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_HMAIL" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_REVOLV" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_PLBGL" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_FRTBK" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_REBNT" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_ROLNT" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_DEPTCD" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_RATCOD" Type="5" Length="6" Decimal="0"/>
+<Element Id="@O1_CLCODE" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_LNNUM" Type="2" Length="19" Decimal="0"/>
+<Element Id="@O1_LMCOST" Type="2" Length="5" Decimal="0"/>
+<Element Id="@O1_PCACCN" Type="2" Length="19" Decimal="0"/>
+<Element Id="@O1_DLRNO" Type="5" Length="10" Decimal="0"/>
+<Element Id="@O1_PWOFID" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_PWOFAC" Type="2" Length="19" Decimal="0"/>
+<Element Id="@O1_ADPTCD" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_LMPRDC" Type="2" Length="5" Decimal="0"/>
+<Element Id="@O1_BNMEXP" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_GRPSTF" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_INCTVF" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_CLSZRO" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_FDRATE" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_AVGBKC" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_AVGSD8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_SECLN" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_SECLVA" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_ITDCOD" Type="5" Length="10" Decimal="0"/>
+<Element Id="@O1_OFFCR" Type="5" Length="10" Decimal="0"/>
+<Element Id="@O1_WHCODE" Type="2" Length="1" Decimal="0"/>
+<Element Id="@O1_WCHCOD" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_SIC1" Type="5" Length="32" Decimal="0"/>
+<Element Id="@O1_LNSIC1" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_SIC2" Type="5" Length="32" Decimal="0"/>
+<Element Id="@O1_LNSIC2" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_SIC3" Type="5" Length="32" Decimal="0"/>
+<Element Id="@O1_LNSIC3" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_SIC4" Type="5" Length="32" Decimal="0"/>
+<Element Id="@O1_LNSIC4" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_BKDISC" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_CLINSN" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_BKDSC2" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_CLPREM" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_INTREB" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_CLIEX8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_DLRDSC" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_CLREB" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_DLRREB" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_MIPREM" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_MIREB" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_CAPREP" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_RESIDV" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_TIER" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_NOADVP" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_ADVMRG" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_MIDAYS" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_MINCG" Reference="ETP.TRANSACTION_AMOUNT9_2O"/>
+<Element Id="@O1_CGRINT" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_CPDPRD" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_REMIND" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_SENDCD" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_SENDPD" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_INCLUD" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_FFPDT" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_UPPCD" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_DFPCD" Type="2" Length="1" Decimal="0"/>
+<Element Id="@O1_CNIPD" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_DANIP" Type="2" Length="2" Decimal="0"/>
+<Element Id="@O1_UPIOB" Type="2" Length="2" Decimal="0"/>
+<Element Id="@O1_SWRELS" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_CFPDT" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_DAFP" Type="2" Length="2" Decimal="0"/>
+<Element Id="@O1_UPDOB" Type="2" Length="2" Decimal="0"/>
+<Element Id="@O1_MTHBK" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_DAYBK" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_ASMAT" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_REAMOR" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_ROREAM" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_CPAMR" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_ROCPAM" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_ROABKD" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_RABKD" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_ROUEXI" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_RUEXI" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_UMDRC" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_INALC" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_UMDCP" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_SENDCL" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_RUMATD" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_RELEAC" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_GFREL" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_GFRCD" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_GFUL" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_GFUCD" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_GAVAI" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_GAVCD" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_FNPPTM" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_FNPPTC" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_PCIND" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_PPDT8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_DCIND" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_FNESTM" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_ODGRC" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_FNESTC" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_FPR1" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_FPR2" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_FPR3" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_FPRP1" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_FPRBL" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_FPRP2" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_FPR4" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_FWMTH" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_FPR5" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_FPR6" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_FPR7" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_FPR8" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_FESM1" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_FERBL" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_FPR11" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_FWFUL" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_FCA1" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_FCA2" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_FCA3" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_FCA4" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_FCA5" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_COMRAT" Type="2" Length="5" Decimal="0"/>
+<Element Id="@O1_COMMIT" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_MINUL" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_MULPC" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_FUDRW" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_FUDPC" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_FUDER" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_FUDAR" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_AVAID8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_UCEXD8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_YBSEC" Type="2" Length="1" Decimal="0"/>
+<Element Id="@O1_NCFDAY" Type="2" Length="2" Decimal="0"/>
+<Element Id="@O1_NXCFD8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_NSCFD8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_NCFFRQ" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_DANCF" Type="2" Length="2" Decimal="0"/>
+<Element Id="@O1_UPCFB" Type="2" Length="2" Decimal="0"/>
+<Element Id="@O1_NCFFRC" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_CCFD" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_FREPL" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_FRP8" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_FRP1" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_FRP2" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_FRP3" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_FRP4" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_FRP5" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_FRP6" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_FRP7" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_FRP9" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_FRP10" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_FRPP1" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_FRRBL" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_FRPP2" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_FILON" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_FPREP" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_FCANC" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_SUBSID" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_ROLM" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_ROLEF8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_ROLSE8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_ALTSCH" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_DRWSCH" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_ALTRAT" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_ESCROW" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_HASARM" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_TIERED" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_SICODE" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_GIRO" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_PRSCH" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_INVRO" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_SPFLAG" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_FPRTI" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_ATOPYI" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_PFDAYS" Type="2" Length="5" Decimal="0"/>
+<Element Id="@O1_PFRMD" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_LTDPFR" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_MNLUID" Type="5" Length="10" Decimal="0"/>
+<Element Id="@O1_MNCDT8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_MERGEP" Type="5" Length="3" Decimal="0"/>
+<Element Id="@O1_ZXCAMT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_SPLMCV" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_SPPRCT" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_MPDCO" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_DPDCO" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_COMTD" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_TDRIND" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_TDRCNT" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_TDRGCD" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_DISMIN" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_DISRIN" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_DISRIT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_DISRNT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_DISRLC" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_LCLAD8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_LNCSV" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_RCMATD" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_AUADVP" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_INTRE2" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_YSIREB" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_YSIRE2" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_YSDREB" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_MIINSN" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_MIIEX8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_AHINSN" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_AHIEX8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_AHPREM" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_AHREB" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_YSMREB" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_YSCREB" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_YSAREB" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_ESDT8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_FPR9" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_FSRBL" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_REBGRC" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_WAIVCF" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_OPISUP" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_VFLOR" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_VCEIL" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_LNCARE" Type="5" Length="40" Decimal="0"/>
+<Element Id="@O1_SUBCOM" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_REDRAW" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_CRDLIM" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_CRDUTL" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_ORDLIM" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_RDLIMT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_APRDW8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_ADAPRD" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_RDEXP8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_ANRGCD" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_GLBOOK" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_LMMIAC" Type="2" Length="5" Decimal="0"/>
+<Element Id="@O1_LMDIAC" Type="2" Length="5" Decimal="0"/>
+<Element Id="@O1_TOTVAT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_REMVAT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_POBVAT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_STOPVT" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_STVTD8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_LPCAMT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_LPDAMT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_LPIAMT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_LPCVAT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_LPIVAT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_HPPMTV" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_HPFPMB" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_HPPRTV" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_LPTMD8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_HPMINV" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_LPTMNO" Type="5" Length="20" Decimal="0"/>
+<Element Id="@O1_BILVAT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_LPDWNV" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_HPFPMV" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_DHRREF" Type="5" Length="25" Decimal="0"/>
+<Element Id="@O1_DHMMBR" Type="5" Length="10" Decimal="0"/>
+<Element Id="@O1_AFFAMT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_AFLIMT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_BILPNO" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_BILINO" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_BILESO" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_BILCFO" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_BILLCO" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_BILOCO" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_BILMCO" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_BILRIO" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_BILMIO" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_BILRLO" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_WTOUSE" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_WREMTM" Type="2" Length="5" Decimal="0"/>
+<Element Id="@O1_WREMTC" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_PAUTDB" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_DRACCT" Type="2" Length="19" Decimal="0"/>
+<Element Id="@O1_LEPJCD" Type="5" Length="10" Decimal="0"/>
+<Element Id="@O1_WLEPDSC" Type="5" Length="256" Decimal="0"/>
+<Element Id="@O1_LEPSTS" Type="5" Length="3" Decimal="0"/>
+<Element Id="@O1_EMPCOD" Type="5" Length="10" Decimal="0"/>
+<Element Id="@O1_LAEXBC" Type="5" Length="2" Decimal="0"/>
+<Element Id="@O1_SUBCOD" Type="5" Length="4" Decimal="0"/>
+<Element Id="@O1_BUNDLE" Type="5" Length="10" Decimal="0"/>
+<Element Id="@O1_COMPRO" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_COMPD8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_CPMSMT" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_CPMSTS" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_STISUP" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_LEXCDA" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_WEXCIN" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_WEXCPR" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_WRKBLP" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_WRKBLI" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_WRKBCF" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_WRKBLC" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_WRKBRI" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_WRKBMI" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_WRKBRL" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_WRKBVT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_RDAVBL" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_TOTFLT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_LEGSTA" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_ASSESC" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_NOTCRT" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_CHQDT8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_NUMRDW" Type="2" Length="5" Decimal="0"/>
+<Element Id="@O1_MRRACC" Type="2" Length="19" Decimal="0"/>
+<Element Id="@O1_CHGDT8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_PWOAPB" Type="5" Length="10" Decimal="0"/>
+<Element Id="@O1_PWOAP8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_PWOREA" Type="5" Length="4" Decimal="0"/>
+<Element Id="@O1_PMAXIC" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_YTDINC" Reference="ETP.TRANSACTION_AMOUNT19_5O"/>
+<Element Id="@O1_YTDMXI" Reference="ETP.TRANSACTION_AMOUNT19_5O"/>
+<Element Id="@O1_LTDINC" Reference="ETP.TRANSACTION_AMOUNT19_5O"/>
+<Element Id="@O1_LTDMXI" Reference="ETP.TRANSACTION_AMOUNT19_5O"/>
+<Element Id="@O1_SLDCSC" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_SUPPMT" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_SUPBAL" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_ROLTER" Type="2" Length="5" Decimal="0"/>
+<Element Id="@O1_ROLTMC" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_ODCBAL" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_WPGDT8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_WPGDAY" Type="2" Length="2" Decimal="0"/>
+<Element Id="@O1_WPGTRM" Type="2" Length="5" Decimal="0"/>
+<Element Id="@O1_WPGCOD" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_WNPDT" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_EMAMDT" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_SIC5" Type="5" Length="32" Decimal="0"/>
+<Element Id="@O1_LNSIC5" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_SIC6" Type="5" Length="32" Decimal="0"/>
+<Element Id="@O1_LNSIC6" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_SIC7" Type="5" Length="32" Decimal="0"/>
+<Element Id="@O1_LNSIC7" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_SIC8" Type="5" Length="32" Decimal="0"/>
+<Element Id="@O1_LNSIC8" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_CLUBL" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_CAZBGR" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_CAZBGC" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_OVPINC" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_SBUCOD" Type="5" Length="4" Decimal="0"/>
+<Element Id="@O1_INSRJU" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_EXCDT8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_TXBSD8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_TXBED8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_OVRTRN" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_STRDMI" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_STRDRI" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_STRPRI" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_BILPRN" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_BILINT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_BILESC" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_BILCF" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_BILLC" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_BILOC" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_BILMC" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_BILRIN" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_BILMIN" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_BILRLC" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_REINRT" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_XBILBAL" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_XDUEBAL" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_TOTFLD" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_LODTR" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_LODTC" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_FPAWLP" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_FESWLP" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_WAIVER" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_FESWAI" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_NTCPRP" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_NTMPRP" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_PRPWLP" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_FRPWLP" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_PRPWAI" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_FRPWAI" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_NWFREQ" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_NWFRCD" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_NWIFRQ" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_NWIFRC" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_OVLBAL" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_CURPNO" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_OVLRAT" Reference="ETP.TRANSACTION_RATE11_9O"/>
+<Element Id="@O1_PNICNO" Type="5" Length="20" Decimal="0"/>
+<Element Id="@O1_LEGST3" Type="5" Length="3" Decimal="0"/>
+<Element Id="@O1_AGMDT8" Type="3" Length="5" Decimal="0"/>
+<Element Id="@O1_JDGAUD" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_ACREF1" Type="5" Length="20" Decimal="0"/>
+<Element Id="@O1_ACREF2" Type="5" Length="20" Decimal="0"/>
+<Element Id="@O1_ACBLID" Type="5" Length="15" Decimal="0"/>
+<Element Id="@O1_LNEXPN" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_LNEXSP" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_UCRDUE" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_UCRDUEO" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_INTUCR" Reference="ETP.TRANSACTION_AMOUNT19_5O"/>
+<Element Id="@O1_YSINTUCR" Reference="ETP.TRANSACTION_AMOUNT19_5O"/>
+<Element Id="@O1_PENTAX" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_PENNON" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_LLCCP8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_XAFMPRN" Reference="ETP.TRANSACTION_AMOUNT15_2O"/>
+<Element Id="@O1_RCNT01" Type="2" Length="3" Decimal="0"/>
+<Element Id="@O1_RCOD03" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_NTCPRF" Type="5" Length="1" Decimal="0"/>
+<Element Id="@O1_THRUD8" Reference="ETP.TRANSACTION_DATESO"/>
+<Element Id="@O1_PWCBAL" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_PWACCINT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_PWBKSC" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_PWINTR" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_PWLC" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_PWCOM" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_PWOTHCHG" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_PWMISCD" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_PWRESINT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_PWRESLC" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_PWMORINT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_PWADVPMT" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_PWCURPO" Reference="ETP.TRANSACTION_AMOUNT17_2O"/>
+<Element Id="@O1_LNFLG01" Type="5" Length="1" Decimal="0"/>
+</Fields>
+<Description>
+<Element Id="ACCTNO" Text="Account Number"/>
+<Element Id="ACTYPE" Text="Account Type"/>
+<Element Id="CIFNO" Text="CIF Number"/>
+<Element Id="BRN" Text="Branch Number"/>
+<Element Id="BRNAME" Text="Branch Name"/>
+<Element Id="CURTYP" Text="Currency Type"/>
+<Element Id="MCLFLG" Text="MCL Flag"/>
+<Element Id="MCLNID" Text="Multi CCY Loan Code"/>
+<Element Id="PARTID" Text="Participation Code"/>
+<Element Id="TYPE" Text="Loan Type"/>
+<Element Id="PTYDSC" Text="Type Description"/>
+<Element Id="AANO" Text="Facility ID"/>
+<Element Id="FCODE" Text="Facility Code"/>
+<Element Id="FSEQ" Text="Sequence Number"/>
+<Element Id="SUSACT" Text="Account Number"/>
+<Element Id="LPLSNM" Text="Lender Short Name"/>
+<Element Id="AFCPNO" Text="CP No."/>
+<Element Id="CBAL" Text="Current Balance"/>
+<Element Id="ORGAMT" Text="Original Balance"/>
+<Element Id="AMTREL" Text="Amount Release"/>
+<Element Id="ASSLC" Text="Assessed Late Charges"/>
+<Element Id="INTDUE" Text="Acc. Interest Due"/>
+<Element Id="LCDUE" Text="Late Charges Due"/>
+<Element Id="CFDUE" Text="Comm. Fee Due"/>
+<Element Id="RIODUE" Text="Rest. Int Due"/>
+<Element Id="RLCDUE" Text="Rest. L/C Due"/>
+<Element Id="MORDUE" Text="Moratorium Due"/>
+<Element Id="OTHCHG" Text="Other Charges"/>
+<Element Id="MISCD" Text="Miscellaneous Cost"/>
+<Element Id="RESINT" Text="Restructured Interest"/>
+<Element Id="MORINT" Text="Accrued Moratorium Interest"/>
+<Element Id="RESLC" Text="Restructured Late Charge"/>
+<Element Id="ADVPMT" Text="Advance Payment"/>
+<Element Id="AVLIMT" Text="Available Limit"/>
+<Element Id="HOLD" Text="Earmark"/>
+<Element Id="AVLBAL" Text="Available Balance"/>
+<Element Id="XOSBAL" Text="O/S Balance"/>
+<Element Id="AVBLOW" Text="Lowest Avail. Bal Work Field"/>
+<Element Id="AVBAPW" Text="Apport. Avail. Bal Work Field"/>
+<Element Id="ACCINT" Text="Accrued Interest"/>
+<Element Id="PENINT" Text="Accrued Penalty Interest"/>
+<Element Id="COMACC" Text="Commitment fee Accr Int"/>
+<Element Id="MEMAMT" Text="Memo Post Amount"/>
+<Element Id="PMTCOD" Text="Payment Code"/>
+<Element Id="PMTAMT" Text="Payment Amount"/>
+<Element Id="FNLPMT" Text="Final Payment"/>
+<Element Id="PRTPMT" Text="Partial Pymt Amount"/>
+<Element Id="PPRPMT" Text="Partial Principal Pymt Amount"/>
+<Element Id="PINPMT" Text="Partial Interest Pymt Amount"/>
+<Element Id="PMIPMT" Text="Partial Mora Int Pymt Amount"/>
+<Element Id="PRIPMT" Text="Partial Rest. Int Pymt Amount"/>
+<Element Id="DRLIMT" Text="Drawing Limit"/>
+<Element Id="CURPO" Text="Current Month Payoff"/>
+<Element Id="PFBAL" Text="Profit period Agg Bal"/>
+<Element Id="UNDRWN" Text="Undrawn Limit"/>
+<Element Id="LKCLAS" Text="Facility Class"/>
+<Element Id="LNSPTF" Text="SPTF loan type"/>
+<Element Id="CURDEC" Text="Currency Decimals"/>
+<Element Id="TOTOSB" Text="Original o/s balance"/>
+<Element Id="TOTWOF" Text="Written-off Amount"/>
+<Element Id="TOTWDV" Text="Total Written-Down Value"/>
+<Element Id="YSCBAL" Text="Yesterday Current Balance"/>
+<Element Id="YSOTHC" Text="Yesterdays Other Chgs"/>
+<Element Id="YSMISC" Text="Yesterdays Misc Cost"/>
+<Element Id="YSASLC" Text="Yesterdays Assessed LC"/>
+<Element Id="YSPDLC" Text="Yesterdays Paid LC"/>
+<Element Id="YSACCI" Text="Yesterdays Accrued Int"/>
+<Element Id="YSACLC" Text="Yesterdays Accrued L/C"/>
+<Element Id="YSACCF" Text="Yesterdays Acc Com Fee"/>
+<Element Id="YSACDL" Text="Yesterdays Dealer Accrue"/>
+<Element Id="BILPOG" Text="Org Bill Prn b4 RC"/>
+<Element Id="BILPOS" Text="O/s Bill Prn b4 RC"/>
+<Element Id="BILPOF" Text="F/s Bill Prn b4 RC"/>
+<Element Id="TERM" Text="Loan Term"/>
+<Element Id="TMCODE" Text="Loan Term Code"/>
+<Element Id="IBASE" Text="Interest Base"/>
+<Element Id="IFREQ" Text="Interest Freq."/>
+<Element Id="ROTERM" Text="Main A/C Max Roll Term"/>
+<Element Id="ROTMCD" Text="Main A/C Max Roll Tm Cd"/>
+<Element Id="RATE" Text="Loan interest rate"/>
+<Element Id="FREQ" Text="Payment Frequency"/>
+<Element Id="FRCODE" Text="Payment Freq Code"/>
+<Element Id="IPFREQ" Text="Int Payment Frequency"/>
+<Element Id="IPCODE" Text="Int Payment Freq Code"/>
+<Element Id="MATRAT" Text="Maturity Rate"/>
+<Element Id="MATDLR" Text="Maturity Dealer Rate"/>
+<Element Id="MATRTN" Text="Mat. Rate Number"/>
+<Element Id="MATPVR" Text="Mat. Rate Variance"/>
+<Element Id="MATPVC" Text="Mat. Rate Variance Code"/>
+<Element Id="MATFLR" Text="Mat. Rate Floor"/>
+<Element Id="MATCEL" Text="Mat. Rate Ceiling"/>
+<Element Id="MATPD8" Text="Mat. Rate Review Date"/>
+<Element Id="MATPRT" Text="Mat. Rate Review Term"/>
+<Element Id="MATPRC" Text="Mat. Rate Review TM Code"/>
+<Element Id="MATPDY" Text="Mat. Rate Review Day"/>
+<Element Id="NACDT8" Text="Nonaccrual Date"/>
+<Element Id="DLRMTD" Text="Dealer Cal Mathod"/>
+<Element Id="EXMPT" Text="Exempt Type percentage"/>
+<Element Id="PDIEM" Text="Daily Accrual"/>
+<Element Id="PDACLC" Text="Daily Accr Late Chg"/>
+<Element Id="PDACCF" Text="Daily Accr Comm Fee"/>
+<Element Id="PDACDL" Text="Daily Dealer Accr"/>
+<Element Id="PRATEN" Text="Prime Rate Number"/>
+<Element Id="ACCIN2" Text="Secondary Accrued Int"/>
+<Element Id="PVCODE" Text="Prime Variance Code"/>
+<Element Id="PVARI" Text="Prime Variance"/>
+<Element Id="LCTYPE" Text="Late Charge Type"/>
+<Element Id="LCRATE" Text="Late Charge Rate"/>
+<Element Id="LCGRC" Text="Late Chg Grace Period"/>
+<Element Id="LCGRCI" Text="LC Grace Int Servicing"/>
+<Element Id="LCITYP" Text="Int Late Charge Type"/>
+<Element Id="LCIRAT" Text="Int Late Charge Rate"/>
+<Element Id="LCIGRC" Text="Int Late Charge Grace Period"/>
+<Element Id="LCIGRI" Text="Int LC Grace Int Servicing"/>
+<Element Id="PFLOOR" Text="Prime Rate Floor"/>
+<Element Id="PCEIL" Text="Prime Rate Ceiling"/>
+<Element Id="PRVDAY" Text="Prime Review Day"/>
+<Element Id="PREVD8" Text="Prime Review Date"/>
+<Element Id="PRTERM" Text="Prime Review Term"/>
+<Element Id="PRCODE" Text="Prime Review Term Code"/>
+<Element Id="RRTERM" Text="Rate User Manual Review Term"/>
+<Element Id="RRCODE" Text="Rate User Manual Review Term Code"/>
+<Element Id="PREBAL" Text="Prev Rest Balance"/>
+<Element Id="TCHAMT" Text="Tranche Amount"/>
+<Element Id="YBASE" Text="Year Base"/>
+<Element Id="YBSEL" Text="LC Accr Year Base"/>
+<Element Id="DLRATE" Text="Dealer Rate"/>
+<Element Id="DLRACC" Text="Dealer Accrued Int"/>
+<Element Id="ITYPE" Text="Interest Type"/>
+<Element Id="RREVD8" Text="Rate User Manual Review Date"/>
+<Element Id="RRVDAY" Text="Rate User Manual Review Day"/>
+<Element Id="ACCLCF" Text="Accrue on L/C rate Flag"/>
+<Element Id="ACCMLC" Text="Accrue Memo Late charges"/>
+<Element Id="MEMOLC" Text="Memo Late charges"/>
+<Element Id="ACCMIN" Text="Accrue Memo Interest"/>
+<Element Id="ACCMOR" Text="Accrue on Mora Int during Mora Prd (Y/N)"/>
+<Element Id="LNLCDY" Text="Late Charge Pymt Day of Month"/>
+<Element Id="LNLCN8" Text="Late Charge Pymt Date"/>
+<Element Id="LNLCS8" Text="Late Charge Sched Pymt Date"/>
+<Element Id="LNLCFR" Text="Late Charge Freq"/>
+<Element Id="LNLCFC" Text="Late Charge Freq code"/>
+<Element Id="CLCD" Text="Auto set first LC dt"/>
+<Element Id="DANLC" Text="Day of mth For auto set"/>
+<Element Id="UPLCB" Text="Day for Auto set on/b4"/>
+<Element Id="POMCLB" Text="Clawback arrears to last due date"/>
+<Element Id="POMFLG" Text="Default Rate Flag"/>
+<Element Id="POMARR" Text="Arrs Mths/Days To Switch"/>
+<Element Id="POMATC" Text="Arrears Grace Prd Code"/>
+<Element Id="POMRAT" Text="Default Rate"/>
+<Element Id="POMRTN" Text="Default Rate  Number"/>
+<Element Id="POMVRI" Text="Default Rate Variance"/>
+<Element Id="POMVRC" Text="Default Rate Var Code"/>
+<Element Id="APRATE" Text="Annualised Pct Rate"/>
+<Element Id="EFRATE" Text="Effective Rate"/>
+<Element Id="PRCPKI" Text="Price Campaign Indicator"/>
+<Element Id="MULTIR" Text="Multi Tier Rate"/>
+<Element Id="MIAFCA" Text="Minimum Amt for Capital Prepayment"/>
+<Element Id="MXAFCA" Text="Maximum Amt for  Capital Prepayment"/>
+<Element Id="MIMEST" Text="Minimum Amt for Early Settlement"/>
+<Element Id="MXMEST" Text="Maximum Amt for Early Settlement"/>
+<Element Id="MIMPRP" Text="Minimum Amt for  Funding Loss"/>
+<Element Id="MXMPRP" Text="Maximum Amt for  Funding Loss"/>
+<Element Id="MIMFRP" Text="Minimum Amt for  S.Funding Loss"/>
+<Element Id="MXMFRP" Text="Maximum Amt for  S.Funding Loss"/>
+<Element Id="CAREAN" Text="Close Account Reason"/>
+<Element Id="USERP" Text="Use Relationship Pricing"/>
+<Element Id="RPSEQ" Text="Relatinship Pricing Reduction Sequence"/>
+<Element Id="STDRAT" Text="Standard Rate"/>
+<Element Id="STDRTN" Text="Standard Rate Number"/>
+<Element Id="STDVAR" Text="Standard Rate Variance"/>
+<Element Id="STDVAC" Text="Standard Rate Variance Code"/>
+<Element Id="STDNUM" Text="No of Mth switch to Standard Rate"/>
+<Element Id="STNRP8" Text="Next Relationship Pricing Review Date"/>
+<Element Id="STMBAL" Text="Balance Last Statement"/>
+<Element Id="STMDT8" Text="Date Last Statement"/>
+<Element Id="NEWPMT" Text="New Payment Amount"/>
+<Element Id="NWPMD8" Text="New Pymt Effective Date"/>
+<Element Id="LSTPMT" Text="Last Pymt Amount"/>
+<Element Id="LPDT8" Text="Last Pymt Date"/>
+<Element Id="UMDDB" Text="Update Mat date - Disb"/>
+<Element Id="NSPDT8" Text="Next Sched Pymt Date"/>
+<Element Id="NSIPD8" Text="Nxt Sch Int pymt due dt"/>
+<Element Id="NPDT8" Text="Next Pymt Due Date"/>
+<Element Id="NIPDT8" Text="Next Int. Pymt Due Date"/>
+<Element Id="ORGDT8" Text="Original Loan Date"/>
+<Element Id="DATOP8" Text="Date Entered"/>
+<Element Id="FULLD8" Text="Full Rel. Date"/>
+<Element Id="FRELD8" Text="1st Release Date"/>
+<Element Id="FPDT8" Text="1st Pymt Date"/>
+<Element Id="ORGMD8" Text="Original Maturity Date"/>
+<Element Id="FMATD8" Text="Final Maturity Date"/>
+<Element Id="MATDT8" Text="Maturity Date"/>
+<Element Id="NREVD8" Text="Next Review Date"/>
+<Element Id="STATUS" Text="Status"/>
+<Element Id="STSDT8" Text="Status Date"/>
+<Element Id="POFFD8" Text="Payoff Date"/>
+<Element Id="TYPCLS" Text="Classification Type"/>
+<Element Id="EXAMD8" Text="Examiner Class Date"/>
+<Element Id="LREBD8" Text="Last Rebate Date"/>
+<Element Id="NREBD8" Text="Next Rebate Date"/>
+<Element Id="NPDAY" Text="Pymt Day of Month"/>
+<Element Id="NIPDAY" Text="Int Pymt Day of Month"/>
+<Element Id="LFEXD8" Text="Letter of Offer Date"/>
+<Element Id="LEXCD8" Text="Last excess date"/>
+<Element Id="BALLON" Text="Balloon Payment"/>
+<Element Id="MNLDT8" Text="Last Maint Date"/>
+<Element Id="CARCD" Text="Classified Acct. code"/>
+<Element Id="NPLFLG" Text="NPL Flag"/>
+<Element Id="NPLSTA" Text="NPL Status"/>
+<Element Id="NPLDT8" Text="NPL Date"/>
+<Element Id="NPLRSN" Text="NPL Reason"/>
+<Element Id="JDACCR" Text="Judgment Sum Accr Int"/>
+<Element Id="JDIND" Text="JDSUM accrual indicator"/>
+<Element Id="RECALL" Text="Recall Status"/>
+<Element Id="RCLDT8" Text="Recall Date 6"/>
+<Element Id="RCLEF8" Text="Recall Eff Date 6"/>
+<Element Id="CLSRSN" Text="Reason of classification"/>
+<Element Id="LNCARP" Text="Previous CAR Code"/>
+<Element Id="LNCSD8" Text="Date Classified"/>
+<Element Id="REFFRM" Text="Refinance From"/>
+<Element Id="REFTO" Text="Refinance To"/>
+<Element Id="LNCSP8" Text="Previous Date Clas."/>
+<Element Id="INTSUP" Text="Total Int-In-Susp"/>
+<Element Id="LCSUP" Text="Total L/C-In-Susp"/>
+<Element Id="N_INTSUP" Text="Prf. In Suspd. - ISL"/>
+<Element Id="N_LCSUP" Text="C/C. In Suspd. - ISL"/>
+<Element Id="INB4SP" Text="Interest before suspense"/>
+<Element Id="LCB4SP" Text="Late charges b4 suspense"/>
+<Element Id="IISTAX" Text="Taxable Int-In-Susp"/>
+<Element Id="IISNTX" Text="Non-taxable Int-In-Susp"/>
+<Element Id="IB4NTX" Text="Int before non-taxable"/>
+<Element Id="RINSUP" Text="Total Rest-Int-In-Susp"/>
+<Element Id="RISTAX" Text="Taxable Rest-Int-In-Susp"/>
+<Element Id="RISNTX" Text="Non-taxable Rest-Int-In-Susp"/>
+<Element Id="PDTOD8" Text="Int Paid to Date"/>
+<Element Id="MFRATE" Text="Moratorium- Fixed Interest Rate"/>
+<Element Id="MFMORT" Text="Moratorium- Fixed Moratorium Int Rate"/>
+<Element Id="MFMIAM" Text="Moratorium- Fixed Max Interest Amt"/>
+<Element Id="MFMMAM" Text="Moratorium- Fixed Max Moratorium Int Amt"/>
+<Element Id="MRFLAG" Text="Moratorium Flag"/>
+<Element Id="MRSTR8" Text="Moratorium Start Date"/>
+<Element Id="MREXP8" Text="Moratorium Expiry Date"/>
+<Element Id="IPMTAM" Text="Interest Pymt Amount"/>
+<Element Id="IPMTPC" Text="Interest Payment %"/>
+<Element Id="MIPMTA" Text="Moratorium Interest Pymt Amount"/>
+<Element Id="RIPMTA" Text="Restructured Interest Pymt Amount"/>
+<Element Id="PPMTAM" Text="Principal Pymt Amount"/>
+<Element Id="RNPLPR" Text="Monitor Nmths prompt pmt"/>
+<Element Id="RNPCNT" Text="Counter Nmths prompt pmt"/>
+<Element Id="SPPROV" Text="Specific Provision"/>
+<Element Id="LMPROV" Text="Last Month Provision"/>
+<Element Id="YSACMI" Text="Yesterdays accrual Mora -Fixed Int Rate"/>
+<Element Id="YSACMM" Text="Yesterdays accrual Mora -Fixed Mora Int Rate"/>
+<Element Id="YSMMMI" Text="Yesterdays Mora - Max Mora Int"/>
+<Element Id="PFMEAR" Text="Profit period Mora. Int earned"/>
+<Element Id="PPMEAR" Text="Profit to point Mora. Int earned"/>
+<Element Id="SUPFLG" Text="Interest Suspend Flag"/>
+<Element Id="SUPSTA" Text="Interest Suspend Status"/>
+<Element Id="YSSUPS" Text="Yesterday Interest Suspend Status"/>
+<Element Id="SUPDT8" Text="Interest Suspend Date"/>
+<Element Id="PSUPD8" Text="Previous Interest Suspend Date"/>
+<Element Id="LNPLD8" Text="Last NPL status date"/>
+<Element Id="PNPLD8" Text="Prev NPL status date"/>
+<Element Id="TDACCI" Text="Today Accrued Int"/>
+<Element Id="TDACLC" Text="Today Accrued L/C"/>
+<Element Id="TDACCF" Text="Today Acc Com Fee"/>
+<Element Id="TDACDL" Text="Today Dealer Accrue"/>
+<Element Id="CARFLG" Text="Classified Acct. Flag"/>
+<Element Id="SPAAMT" Text="Spec Prov Absolute Amt"/>
+<Element Id="CARTP" Text="Classified Acct. Type"/>
+<Element Id="DEMSTU" Text="Demand/Student Loan Code"/>
+<Element Id="PURCOD" Text="Purpose Code"/>
+<Element Id="GROUP" Text="Group Code"/>
+<Element Id="CLASS" Text="Class Code"/>
+<Element Id="HMAIL" Text="Hold Mail Code"/>
+<Element Id="REVOLV" Text="Revolving"/>
+<Element Id="PLBGL" Text="Post Lender Bank GL"/>
+<Element Id="FRTBK" Text="Fronting Bank"/>
+<Element Id="REBNT" Text="Generate Notice Rebate to Customer"/>
+<Element Id="ROLNT" Text="Rollover Notice"/>
+<Element Id="DEPTCD" Text="Department Code"/>
+<Element Id="RATCOD" Text="Credit Rating Code"/>
+<Element Id="CLCODE" Text="Credit Line Code"/>
+<Element Id="LNNUM" Text="Account Group Number"/>
+<Element Id="LMCOST" Text="Cost center"/>
+<Element Id="PCACCN" Text="Participation Acct Num"/>
+<Element Id="DLRNO" Text="Dealer No."/>
+<Element Id="PWOFID" Text="Part/Charge off Indicator"/>
+<Element Id="PWOFAC" Text="Part/Charge off Acct Num"/>
+<Element Id="ADPTCD" Text="Department Code"/>
+<Element Id="LMPRDC" Text="Category Code"/>
+<Element Id="BNMEXP" Text="BNM Exempt"/>
+<Element Id="GRPSTF" Text="Group Staff"/>
+<Element Id="INCTVF" Text="Allwed Incentive (Y/N)"/>
+<Element Id="CLSZRO" Text="Close On Zero Bal Code"/>
+<Element Id="FDRATE" Text="Cal RATE Base on dep acc"/>
+<Element Id="AVGBKC" Text="Rate Tied To Avg Of Bks"/>
+<Element Id="AVGSD8" Text="Average Bank Rate StartDate"/>
+<Element Id="SECLN" Text="Secondary Loan"/>
+<Element Id="SECLVA" Text="Sec. Loan Valid. Period"/>
+<Element Id="ITDCOD" Text="Introducer Code"/>
+<Element Id="OFFCR" Text="Officer"/>
+<Element Id="WHCODE" Text="Withholding code"/>
+<Element Id="WCHCOD" Text="Watch list Code"/>
+<Element Id="SIC1" Text="SIC prompt text"/>
+<Element Id="LNSIC1" Text="SIC Code 1"/>
+<Element Id="SIC2" Text="SIC prompt text"/>
+<Element Id="LNSIC2" Text="SIC Code 2"/>
+<Element Id="SIC3" Text="SIC prompt text"/>
+<Element Id="LNSIC3" Text="SIC Code 3"/>
+<Element Id="SIC4" Text="SIC prompt text"/>
+<Element Id="LNSIC4" Text="SIC Code 4"/>
+<Element Id="BKDISC" Text="Bank Discount"/>
+<Element Id="CLINSN" Text="CL Insurance Company N"/>
+<Element Id="BKDSC2" Text="Bank Discount 2"/>
+<Element Id="CLPREM" Text="Credit Life Premium"/>
+<Element Id="INTREB" Text="Interest Rebate"/>
+<Element Id="CLIEX8" Text="CL Ins Exp Date"/>
+<Element Id="DLRDSC" Text="Dealer Discount"/>
+<Element Id="CLREB" Text="Cr Life Ins Rebate"/>
+<Element Id="DLRREB" Text="Dealer Rebate"/>
+<Element Id="MIPREM" Text="Misc Ins Premium"/>
+<Element Id="MIREB" Text="Misc Ins Rebate"/>
+<Element Id="CAPREP" Text="Capital Repayment"/>
+<Element Id="RESIDV" Text="Residue Value"/>
+<Element Id="TIER" Text="Two-tier Rate"/>
+<Element Id="NOADVP" Text="No. of advance instl due"/>
+<Element Id="ADVMRG" Text="Advance Margin"/>
+<Element Id="MIDAYS" Text="Minimum Int Days"/>
+<Element Id="MINCG" Text="Minimum Charge"/>
+<Element Id="CGRINT" Text="Compounding Grace Acc Int"/>
+<Element Id="CPDPRD" Text="Compounding Period"/>
+<Element Id="REMIND" Text="Reminder Code"/>
+<Element Id="SENDCD" Text="Print Billing Notice"/>
+<Element Id="SENDPD" Text="Send Past Due Notice"/>
+<Element Id="INCLUD" Text="Include on Stmt Code"/>
+<Element Id="FFPDT" Text="Set FPDT Upon 1st rel"/>
+<Element Id="UPPCD" Text="Auto Update Pymt Code"/>
+<Element Id="DFPCD" Text="Default Pymt Code(Upt)"/>
+<Element Id="CNIPD" Text="Auto set NIPDT"/>
+<Element Id="DANIP" Text="Day for auto NIPDT"/>
+<Element Id="UPIOB" Text="Disburse on/bef day"/>
+<Element Id="SWRELS" Text="Switch PMTCOD X Amt Rel"/>
+<Element Id="CFPDT" Text="Cal 1st Instl Date"/>
+<Element Id="DAFP" Text="Day for auto 1st pymt"/>
+<Element Id="UPDOB" Text="Disburse on/bef day"/>
+<Element Id="MTHBK" Text="Nmth grace on FPDT cal"/>
+<Element Id="DAYBK" Text="Day grace on FPDT cal"/>
+<Element Id="ASMAT" Text="Auto set maturity date?"/>
+<Element Id="REAMOR" Text="Reamortize Pmt Upon Rate"/>
+<Element Id="ROREAM" Text="Reamortize Rate chg opt"/>
+<Element Id="CPAMR" Text="Reamortise Pmt Upon CP"/>
+<Element Id="ROCPAM" Text="Reamortize Cap.Rep. opt"/>
+<Element Id="ROABKD" Text="Reamortize Disburse opt"/>
+<Element Id="RABKD" Text="Reamortise Pmt Upon Disb"/>
+<Element Id="ROUEXI" Text="Reamortize Exc Int. opt"/>
+<Element Id="RUEXI" Text="Reamortize Upon Exc Int"/>
+<Element Id="UMDRC" Text="Update Mat date - Rate"/>
+<Element Id="INALC" Text="NPL-allocate Int first"/>
+<Element Id="UMDCP" Text="Update Mat date - C/P"/>
+<Element Id="SENDCL" Text="Prt Confirmation Letter"/>
+<Element Id="RUMATD" Text="Auto extend maturity dat"/>
+<Element Id="RELEAC" Text="Re-lease"/>
+<Element Id="GFREL" Text="Grace Period FRELD6 cal"/>
+<Element Id="GFRCD" Text="Grace Period FRELD6 cal"/>
+<Element Id="GFUL" Text="Grace Period FULLD6 cal"/>
+<Element Id="GFUCD" Text="Grace Period FULLD6 cal"/>
+<Element Id="GAVAI" Text="Grace Period AVAIL. cal"/>
+<Element Id="GAVCD" Text="Grace Period AVAIL. cal"/>
+<Element Id="FNPPTM" Text="Part Prepaym. Notc Term"/>
+<Element Id="FNPPTC" Text="Part Prepaym. Notc Tm Cd"/>
+<Element Id="PCIND" Text="Cmmn of Prepymt Per Ind"/>
+<Element Id="PPDT8" Text="Cmmn of Prepymt Date 6"/>
+<Element Id="DCIND" Text="Cmmn of Early Settle Ind"/>
+<Element Id="FNESTM" Text="Early Sett. Notc Term"/>
+<Element Id="ODGRC" Text="Grace day int lieu ntc"/>
+<Element Id="FNESTC" Text="Early Sett. Notc Tm Cd"/>
+<Element Id="FPR1" Text="Prepaym Fee Flat Amt"/>
+<Element Id="FPR2" Text="P. Fee % Of Amt Prepaid"/>
+<Element Id="FPR3" Text="P. Fee % Of Loan Amount"/>
+<Element Id="FPRP1" Text="P. Fee % on Int Rebate"/>
+<Element Id="FPRBL" Text="P. Fee % Of Current Bal"/>
+<Element Id="FPRP2" Text="P. Fee Whichever Higher/Lower"/>
+<Element Id="FPR4" Text="P. Fee % Unexpr Period"/>
+<Element Id="FWMTH" Text="C/pre pym Pof w/in X mth"/>
+<Element Id="FPR5" Text="Settlem Fee Flat Amt"/>
+<Element Id="FPR6" Text="Settlem % Of Amt Prepaid"/>
+<Element Id="FPR7" Text="Settlem % Of Loan Amount"/>
+<Element Id="FPR8" Text="Settlem % Unexpr Period"/>
+<Element Id="FESM1" Text="Settlem % on Int Rebate"/>
+<Element Id="FERBL" Text="Settlem % Of Current Bal"/>
+<Element Id="FPR11" Text="S. Fee Whichever Higher/Lower"/>
+<Element Id="FWFUL" Text="Calc. if ful poff within"/>
+<Element Id="FCA1" Text="Cancel Fee Expr Drw Schd"/>
+<Element Id="FCA2" Text="Cancel Fee Early Sett."/>
+<Element Id="FCA3" Text="ESett Cfee % Unexpr Dura"/>
+<Element Id="FCA4" Text="Avail Cfee % Of Undrawn"/>
+<Element Id="FCA5" Text="Avail Cfee % Unexpr Dura"/>
+<Element Id="COMRAT" Text="Commitment Rate No."/>
+<Element Id="COMMIT" Text="Commitment Rate"/>
+<Element Id="MINUL" Text="Minimum Usage Limit"/>
+<Element Id="MULPC" Text="Min Usage Lmt % Of Ln Am"/>
+<Element Id="FUDRW" Text="Undrawn Limit"/>
+<Element Id="FUDPC" Text="% Of Total Undrawn"/>
+<Element Id="FUDER" Text="Undrawn lmt excess rate"/>
+<Element Id="FUDAR" Text="Undrawn % If Above Lmt"/>
+<Element Id="AVAID8" Text="Availability End Date"/>
+<Element Id="UCEXD8" Text="Available Start Date"/>
+<Element Id="YBSEC" Text="Com Fee Accr Year Base"/>
+<Element Id="NCFDAY" Text="Commitment Fee Pymt Day of Month"/>
+<Element Id="NXCFD8" Text="Commitment Fee Pymt Date"/>
+<Element Id="NSCFD8" Text="Commitment Fee Sched Pymt Date"/>
+<Element Id="NCFFRQ" Text="Commitment Fee Freq"/>
+<Element Id="DANCF" Text="Day of mth For auto set"/>
+<Element Id="UPCFB" Text="Day for Auto set on/b4"/>
+<Element Id="NCFFRC" Text="Commitment Fee Freq code"/>
+<Element Id="CCFD" Text="Auto set first CF dt"/>
+<Element Id="FREPL" Text="Subj to Funding loss"/>
+<Element Id="FRP8" Text="Sett F. Loss % Of Unexpr Period"/>
+<Element Id="FRP1" Text="Prep F.Loss Flat Amt"/>
+<Element Id="FRP2" Text="Prep F.Loss % Of Amt Prepaid"/>
+<Element Id="FRP3" Text="Prep F.Loss % Of LN Amount"/>
+<Element Id="FRP4" Text="Prep F.Loss % Of Unexpr Period"/>
+<Element Id="FRP5" Text="Sett F. Loss Flat Amt"/>
+<Element Id="FRP6" Text="Sett F. Loss % Of Amt Settled"/>
+<Element Id="FRP7" Text="Sett F. Loss % Of Ln Amount"/>
+<Element Id="FRP9" Text="Sett F. Loss % Of Int/Prf Rebate"/>
+<Element Id="FRP10" Text="Sett F. Loss Higher/Lower"/>
+<Element Id="FRPP1" Text="Prep F. Loss % on Int/Pft Rebate"/>
+<Element Id="FRRBL" Text="Prep F.Loss % Of Current Bal"/>
+<Element Id="FRPP2" Text="Prep F. Loss Higher/Lower"/>
+<Element Id="FILON" Text="Subj Int In Lieu Of Notc"/>
+<Element Id="FPREP" Text="Subj For Prepaym Fee"/>
+<Element Id="FCANC" Text="Subj For Cancel. Fee"/>
+<Element Id="SUBSID" Text="Subsidized by 3rd party"/>
+<Element Id="ROLM" Text="Rollover method"/>
+<Element Id="ROLEF8" Text="Next Rollover Eff date"/>
+<Element Id="ROLSE8" Text="Last Rollover Eff date"/>
+<Element Id="ALTSCH" Text="Alternate Pymt Sched"/>
+<Element Id="DRWSCH" Text="Drawndown Schd."/>
+<Element Id="ALTRAT" Text="Alternate Rate"/>
+<Element Id="ESCROW" Text="Escrow/Mortgage Info?"/>
+<Element Id="HASARM" Text="A.R.M. Info Code"/>
+<Element Id="TIERED" Text="Tiered loan"/>
+<Element Id="SICODE" Text="Standing Inst Code"/>
+<Element Id="GIRO" Text="Giro"/>
+<Element Id="PRSCH" Text="Prin Repaym Schd"/>
+<Element Id="INVRO" Text="Prin Inverse Order"/>
+<Element Id="SPFLAG" Text="Spec.Prov Flag"/>
+<Element Id="FPRTI" Text="Tiered Prepayment"/>
+<Element Id="ATOPYI" Text="Auto Pay Int By Unutilised Prin"/>
+<Element Id="PFDAYS" Text="Profit period Agg Days"/>
+<Element Id="PFRMD" Text="Profit period Agg Remainder"/>
+<Element Id="LTDPFR" Text="LTD Int/Pft Period Agg Remainder"/>
+<Element Id="MNLUID" Text="Last Maint User ID"/>
+<Element Id="MNCDT8" Text="Created Date"/>
+<Element Id="MERGEP" Text="Prev. Merger Partner"/>
+<Element Id="ZXCAMT" Text="Excess Amount"/>
+<Element Id="SPLMCV" Text="Last Month Coll Value"/>
+<Element Id="SPPRCT" Text="Last Month SP Percentage"/>
+<Element Id="MPDCO" Text="Month past due auto charge off"/>
+<Element Id="DPDCO" Text="Day past due auto charge off"/>
+<Element Id="COMTD" Text="Auto Charge off Method"/>
+<Element Id="TDRIND" Text="TDR Indicator"/>
+<Element Id="TDRCNT" Text="TDR Control Pass Due"/>
+<Element Id="TDRGCD" Text="TDR Pass due Grace day"/>
+<Element Id="DISMIN" Text="Discount Moratorium Interest"/>
+<Element Id="DISRIN" Text="Discount Restructured Int"/>
+<Element Id="DISRIT" Text="Discount Restructured Intt Tax"/>
+<Element Id="DISRNT" Text="Discount Restructured Int Non Tax"/>
+<Element Id="DISRLC" Text="Discount Restructured L/C"/>
+<Element Id="LCLAD8" Text="L/C Last accr date"/>
+<Element Id="LNCSV" Text="Link Loan to CA/SA"/>
+<Element Id="RCMATD" Text="Maturity Calc Method"/>
+<Element Id="AUADVP" Text="Auto Uplift Advance Payment"/>
+<Element Id="INTRE2" Text="Interest Rebate N2"/>
+<Element Id="YSIREB" Text="Yesterdays Int rebate"/>
+<Element Id="YSIRE2" Text="Yesterdays Int rebate 2"/>
+<Element Id="YSDREB" Text="Yesterday Dealer rebate"/>
+<Element Id="MIINSN" Text="Misc Insurance Company N"/>
+<Element Id="MIIEX8" Text="Misc Int. Exp Date"/>
+<Element Id="AHINSN" Text="A/H Insurance Company N"/>
+<Element Id="AHIEX8" Text="A&#38;H Ins Exp Date"/>
+<Element Id="AHPREM" Text="A &#38; H Ins Premium"/>
+<Element Id="AHREB" Text="A&#38;H Ins Rebate"/>
+<Element Id="YSMREB" Text="Yesterdays Misc Ins reb"/>
+<Element Id="YSCREB" Text="Yesterdays CL rebate"/>
+<Element Id="YSAREB" Text="Yesterdays A&#38;H Rebate"/>
+<Element Id="ESDT8" Text="Cmmn of E/Sett Date 6"/>
+<Element Id="FPR9" Text="Buy Fee % on int rebate"/>
+<Element Id="FSRBL" Text="Sett F.Loss % Of Current Bal"/>
+<Element Id="REBGRC" Text="Rebilling Grace Day"/>
+<Element Id="WAIVCF" Text="Waive Commitment Fee"/>
+<Element Id="OPISUP" Text="Opening Int. in Susp"/>
+<Element Id="VFLOR" Text="Rate Var. Floor"/>
+<Element Id="VCEIL" Text="Rate Var. Ceiling"/>
+<Element Id="LNCARE" Text="Care of"/>
+<Element Id="SUBCOM" Text="Subject to Commi ssion/Dealership"/>
+<Element Id="REDRAW" Text="Redraw"/>
+<Element Id="CRDLIM" Text="Cumulative Redraw Limit"/>
+<Element Id="CRDUTL" Text="Cumulative Redraw Utilisation"/>
+<Element Id="ORDLIM" Text="Original Redraw Limit Ceiling"/>
+<Element Id="RDLIMT" Text="Current Redraw Limit Ceiling"/>
+<Element Id="APRDW8" Text="Redraw Limit Reduction Date"/>
+<Element Id="ADAPRD" Text="Additional Approved Redraw Limit"/>
+<Element Id="RDEXP8" Text="Additional Approved Redraw Limit Date"/>
+<Element Id="ANRGCD" Text="Cooperative Registration"/>
+<Element Id="GLBOOK" Text="GL Book"/>
+<Element Id="LMMIAC" Text="Month in Arrears"/>
+<Element Id="LMDIAC" Text="Days in Arrears"/>
+<Element Id="TOTVAT" Text="Total VAT"/>
+<Element Id="REMVAT" Text="Remaining VAT"/>
+<Element Id="POBVAT" Text="Paid on behalf VAT"/>
+<Element Id="STOPVT" Text="Stop VAT Flag"/>
+<Element Id="STVTD8" Text="Stop VAT Date"/>
+<Element Id="LPCAMT" Text="Car Price"/>
+<Element Id="LPDAMT" Text="Down Payment"/>
+<Element Id="LPIAMT" Text="Investment Amount"/>
+<Element Id="LPCVAT" Text="Car VAT"/>
+<Element Id="LPIVAT" Text="VAT Investment Amt"/>
+<Element Id="HPPMTV" Text="Payment Amount For VAT"/>
+<Element Id="HPFPMB" Text="Current Balance"/>
+<Element Id="HPPRTV" Text="VAT Partial Payment"/>
+<Element Id="LPTMD8" Text="Termination Date"/>
+<Element Id="HPMINV" Text="Close Acct Accor. to Minimum VAT"/>
+<Element Id="LPTMNO" Text="Termination No."/>
+<Element Id="BILVAT" Text="Billed VAT"/>
+<Element Id="LPDWNV" Text="VAT Down Payment"/>
+<Element Id="HPFPMV" Text="VAT Final Payment Amt"/>
+<Element Id="DHRREF" Text="Requester Reference Number"/>
+<Element Id="DHMMBR" Text="MB MBLOGS Member"/>
+<Element Id="AFFAMT" Text="Approved Limit"/>
+<Element Id="AFLIMT" Text="Drawing Limit"/>
+<Element Id="BILPNO" Text="Billed Prin Amt OD"/>
+<Element Id="BILINO" Text="Billed Int Amt OD"/>
+<Element Id="BILESO" Text="Billed Escrow Amt OD"/>
+<Element Id="BILCFO" Text="Billed Com Fee OD"/>
+<Element Id="BILLCO" Text="Billed Late Chgs OD"/>
+<Element Id="BILOCO" Text="Billed Other Chgs OD"/>
+<Element Id="BILMCO" Text="Billed Misc Cost OD"/>
+<Element Id="BILRIO" Text="Billed Restruc. Int. O/D"/>
+<Element Id="BILMIO" Text="Billed Mora. Int. O/D"/>
+<Element Id="BILRLO" Text="Billed Restruc. LC O/D"/>
+<Element Id="WTOUSE" Text="Utilisation"/>
+<Element Id="WREMTM" Text="Remaining Term"/>
+<Element Id="WREMTC" Text="Remaining Term Code"/>
+<Element Id="PAUTDB" Text="Auto Debit"/>
+<Element Id="DRACCT" Text="Debit account number"/>
+<Element Id="LEPJCD" Text="Project Code"/>
+<Element Id="WLEPDSC" Text="Project Name"/>
+<Element Id="LEPSTS" Text="Project Status"/>
+<Element Id="EMPCOD" Text="Employer Name"/>
+<Element Id="LAEXBC" Text="Ex-Bank Code"/>
+<Element Id="SUBCOD" Text="Sub Code"/>
+<Element Id="BUNDLE" Text="Bundle Code"/>
+<Element Id="COMPRO" Text="Compromised Settlement Flag"/>
+<Element Id="COMPD8" Text="Compromised Settlement Flag Change Date"/>
+<Element Id="CPMSMT" Text="Compromise Settle ment Method"/>
+<Element Id="CPMSTS" Text="Compromise Settle ment Status"/>
+<Element Id="STISUP" Text="Stop Interest Suspend"/>
+<Element Id="LEXCDA" Text="Last Excess Amount"/>
+<Element Id="WEXCIN" Text="Interest Excess Amount"/>
+<Element Id="WEXCPR" Text="Principal Excess Amount"/>
+<Element Id="WRKBLP" Text="Work Field Bill Prin."/>
+<Element Id="WRKBLI" Text="Work Field Bill Int."/>
+<Element Id="WRKBCF" Text="Work Field Bill CF."/>
+<Element Id="WRKBLC" Text="Work Field Bill LC."/>
+<Element Id="WRKBRI" Text="Work Field Restruc. Int."/>
+<Element Id="WRKBMI" Text="Work Field Mora. Int."/>
+<Element Id="WRKBRL" Text="Work Field Restruc. LC"/>
+<Element Id="WRKBVT" Text="Work Field VAT"/>
+<Element Id="RDAVBL" Text="Redraw Available Limit"/>
+<Element Id="TOTFLT" Text="Payment Float Amount"/>
+<Element Id="LEGSTA" Text="Legal Status"/>
+<Element Id="ASSESC" Text="Assessment Code"/>
+<Element Id="NOTCRT" Text="No of Time Cheque Return"/>
+<Element Id="CHQDT8" Text="Date Last Cheq. Return"/>
+<Element Id="NUMRDW" Text="Number of Times Redraw"/>
+<Element Id="MRRACC" Text="Part/Charge off Acct Num"/>
+<Element Id="CHGDT8" Text="Chg off Date"/>
+<Element Id="PWOAPB" Text="Write Off Approved By"/>
+<Element Id="PWOAP8" Text="Write off Date"/>
+<Element Id="PWOREA" Text="Write Off Reason"/>
+<Element Id="PMAXIC" Text="Maximum Income %"/>
+<Element Id="YTDINC" Text="YTD Income"/>
+<Element Id="YTDMXI" Text="YTD Maximum Income"/>
+<Element Id="LTDINC" Text="LTD Income"/>
+<Element Id="LTDMXI" Text="LTD Maximum Income"/>
+<Element Id="SLDCSC" Text="Salary Deduction Scheme"/>
+<Element Id="SUPPMT" Text="Suspend Payment Flag"/>
+<Element Id="SUPBAL" Text="Suspend Balance"/>
+<Element Id="ROLTER" Text="Tranche Maximum Rollover Term"/>
+<Element Id="ROLTMC" Text="Tranche Maximum Rollover Term Code"/>
+<Element Id="ODCBAL" Text="OD Current Balance"/>
+<Element Id="WPGDT8" Text="Payment Grace Date"/>
+<Element Id="WPGDAY" Text="Payment Grace Day"/>
+<Element Id="WPGTRM" Text="Payment Grace Term"/>
+<Element Id="WPGCOD" Text="Payment Grace Code"/>
+<Element Id="WNPDT" Text="Next Pymt. Date+Grace"/>
+<Element Id="EMAMDT" Text="Tranche Maturity Date Checking"/>
+<Element Id="SIC5" Text="SIC prompt text"/>
+<Element Id="LNSIC5" Text="SIC Code 5"/>
+<Element Id="SIC6" Text="SIC prompt text"/>
+<Element Id="LNSIC6" Text="SIC Code 6"/>
+<Element Id="SIC7" Text="SIC prompt text"/>
+<Element Id="LNSIC7" Text="SIC Code 7"/>
+<Element Id="SIC8" Text="SIC prompt text"/>
+<Element Id="LNSIC8" Text="SIC Code 8"/>
+<Element Id="CLUBL" Text="Club Loan"/>
+<Element Id="CAZBGR" Text="Close On Zero Bal Grace"/>
+<Element Id="CAZBGC" Text="Close On Zero Bal Grace Code"/>
+<Element Id="OVPINC" Text="Recognize Overpayment as Income"/>
+<Element Id="SBUCOD" Text="SBU Code"/>
+<Element Id="INSRJU" Text="Reject OD Utilization Upon Int Suspense"/>
+<Element Id="EXCDT8" Text="Excess date"/>
+<Element Id="TXBSD8" Text="Taxable Interest  Monitoring Dt"/>
+<Element Id="TXBED8" Text="Taxable Interest End Dt"/>
+<Element Id="OVRTRN" Text="Override Auto-split Transaction Code"/>
+<Element Id="STRDMI" Text="Start Date for Payment to Moratorium Int"/>
+<Element Id="STRDRI" Text="Start Date for Payment to Restructured Int"/>
+<Element Id="STRPRI" Text="Threshold for Restructured Int payment"/>
+<Element Id="BILPRN" Text="Billed Prin Amt"/>
+<Element Id="BILINT" Text="Billed Int Amt"/>
+<Element Id="BILESC" Text="Billed Escrow Amt"/>
+<Element Id="BILCF" Text="Billed Com Fee"/>
+<Element Id="BILLC" Text="Billed Late Chgs"/>
+<Element Id="BILOC" Text="Billed Other Chgs"/>
+<Element Id="BILMC" Text="Billed Misc Cost"/>
+<Element Id="BILRIN" Text="Billed Restructure Int."/>
+<Element Id="BILMIN" Text="Billed Moratorium Int."/>
+<Element Id="BILRLC" Text="Billed Restructured LC"/>
+<Element Id="REINRT" Text="Reinstate Normal  Rate"/>
+<Element Id="XBILBAL" Text="Total Current Billed"/>
+<Element Id="XDUEBAL" Text="Total Overdue Billed"/>
+<Element Id="TOTFLD" Text="Deposit Float Amount"/>
+<Element Id="LODTR" Text="Term from L/O Date"/>
+<Element Id="LODTC" Text="Term Code from L/O Date"/>
+<Element Id="FPAWLP" Text="Allow if within lock in Period C. Prepayment"/>
+<Element Id="FESWLP" Text="Allow if within lock in Period E.Settlement"/>
+<Element Id="WAIVER" Text="Allow Waiver- Capital Prepayment"/>
+<Element Id="FESWAI" Text="Allow Waiver- Early Settlement"/>
+<Element Id="NTCPRP" Text="Time Inst Amt cons.Prept"/>
+<Element Id="NTMPRP" Text="Inst Made bef.Prept"/>
+<Element Id="PRPWLP" Text="Allow if within  lock in Period Funding Loss"/>
+<Element Id="FRPWLP" Text="Allow if within  lock in Period S.Funding Loss"/>
+<Element Id="PRPWAI" Text="Allow Waiver-  Funding Loss"/>
+<Element Id="FRPWAI" Text="Allow Waiver-  S.Funding Loss"/>
+<Element Id="NWFREQ" Text="New Pymt Frequency"/>
+<Element Id="NWFRCD" Text="New Pymt Freq Code"/>
+<Element Id="NWIFRQ" Text="New Int Pymt Frequency"/>
+<Element Id="NWIFRC" Text="New Int Pymt Freq Code"/>
+<Element Id="OVLBAL" Text="Outstanding over-loan"/>
+<Element Id="CURPNO" Text="Current Payment No."/>
+<Element Id="OVLRAT" Text="Over-loan Ratio"/>
+<Element Id="PNICNO" Text="Invoice/Cheque/PN Number"/>
+<Element Id="LEGST3" Text="LEGAL STATUS"/>
+<Element Id="AGMDT8" Text="Agreement date"/>
+<Element Id="JDGAUD" Text="Auction Date"/>
+<Element Id="ACREF1" Text="Filler 1"/>
+<Element Id="ACREF2" Text="Filler 2"/>
+<Element Id="ACBLID" Text="Filler 3"/>
+<Element Id="LNEXPN" Text="Except Past Due Penalty"/>
+<Element Id="LNEXSP" Text="Except suspense interest"/>
+<Element Id="UCRDUE" Text="Current UCR"/>
+<Element Id="UCRDUEO" Text="Overdue UCR"/>
+<Element Id="INTUCR" Text="Interest of Penalty"/>
+<Element Id="YSINTUCR" Text="Yesterday Interest of Penalty"/>
+<Element Id="PENTAX" Text="L/C IN SUSP. TAX"/>
+<Element Id="PENNON" Text="L/C IN SUSP. NON-TAX"/>
+<Element Id="LLCCP8" Text="Last Late Charge Capitalised Date"/>
+<Element Id="XAFMPRN" Text="Max Principal Limit"/>
+<Element Id="RCNT01" Text="Reserve Counter 001"/>
+<Element Id="RCOD03" Text="Reserve Code 003"/>
+<Element Id="NTCPRF" Text="Fee charge Amt prepaid"/>
+<Element Id="THRUD8" Text="Default Rate"/>
+<Element Id="PWCBAL" Text="Write-off Current Balance"/>
+<Element Id="PWACCINT" Text="Write-off Accrued Interest"/>
+<Element Id="PWBKSC" Text="Write-off Bank Discount"/>
+<Element Id="PWINTR" Text="Write-off Interest Rebate"/>
+<Element Id="PWLC" Text="Write-off Late Charge"/>
+<Element Id="PWCOM" Text="Write-off Commitment Fee"/>
+<Element Id="PWOTHCHG" Text="Write-off Other Charge"/>
+<Element Id="PWMISCD" Text="Write-off Miscellaneous Charges"/>
+<Element Id="PWRESINT" Text="Write-off Restructure Interest"/>
+<Element Id="PWRESLC" Text="Write-off Restructure Late Charge"/>
+<Element Id="PWMORINT" Text="Write-off ACCRUED Moratorium Interest"/>
+<Element Id="PWADVPMT" Text="Write-off Advance Payment"/>
+<Element Id="PWCURPO" Text="Write-off Total Outstanding"/>
+<Element Id="LNFLG01" Text="Small Balance Flag"/>
+</Description>
+</Phoenix>

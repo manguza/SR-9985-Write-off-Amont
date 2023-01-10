@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Phoenix Type="Operation"  Name="LN89909O">
+<InputBuffer>
+<Buffers Name="SIBS">
+<Buffer Name="DSP" Source="Text" Path="cfg_mmap/mmap_dspheader.xml"/>
+<Buffer Name="APP" Source="Text" Path="cfg_mmap/mmap_appheader.xml"/>
+<Condition Operator="EQ" Factor1="SIBS.APP.HDRIND" Factor2="AB" Codepage="null">
+<Buffer Name="BDY" Source="Text" Path="cfg_mmap/mmap_apperror.xml"/>
+</Condition>
+<Condition Operator="EQ" Factor1="SIBS.DSP.I13MSTA" Factor2=".DSP0003" Codepage="null">
+<Buffer Name="BDY" Source="Text" Path="cfg_mmap/mmap_LN89909I.xml"/>
+</Condition>
+<Condition Operator="DEFAULT" Factor1="" Factor2="" Codepage="null">
+<Buffer Name="BDY" Source="Text" Path="cfg_mmap/mmap_LN89909O.xml" Occur="SIBS.APP.HDNREC" />
+</Condition>
+</Buffers>
+</InputBuffer>
+<OutputBuffer>
+<Condition Operator="EQ" Factor1="SIBS.APP.HDRIND" Factor2="AB" Codepage="null">
+<Buffers Name="ETP" Type="XML">
+<Buffer Name="APP" Source="Text" Path="cfg_mmap/mmap_appheader.xml"/>
+<Buffer Name="ERR" Source="Text" Path="cfg_mmap/mmap_apperror.xml"/>
+<Buffer Name="BDY" Source="Text" Path="cfg_mmap/mmap_LN89909O.xml"/>
+</Buffers>
+<Mapping>
+<Map Name="Map_LN89909O_E" Source="Text" Path="cfg_map/map_error_response.xml"/>
+</Mapping>
+</Condition>
+<Condition Operator="EQ" Factor1="SIBS.DSP.I13MSTA" Factor2=".DSP0003" Codepage="null">
+<Buffers Name="ETP" Type="XML">
+<Buffer Name="APP" Source="Text" Path="cfg_mmap/mmap_appheader.xml"/>
+<Buffer Name="ERR" Source="Text" Path="cfg_mmap/mmap_apperror.xml"/>
+<Buffer Name="BDY" Source="Text" Path="cfg_mmap/mmap_LN89909O.xml"/>
+</Buffers>
+<Mapping>
+<Map Name="Map_LN89909O_T" Source="Text" Path="cfg_map/map_timeout_response.xml"/>
+</Mapping>
+</Condition>
+<Condition Operator="DEFAULT" Factor1="" Factor2="" Codepage="null">
+<Buffers Name="ETP" Type="XML">
+<Buffer Name="APP" Source="Text" Path="cfg_mmap/mmap_appheader.xml"/>
+<Buffer Name="BDY" Source="Text" Path="cfg_mmap/mmap_LN89909O.xml" Occur="ETP.APP.HDNREC" />
+</Buffers>
+<Mapping>
+<Map Name="Map_LN89909O" Source="Text" Path="cfg_map/map_maintenance_delete_response.xml"/>
+</Mapping>
+</Condition>
+</OutputBuffer>
+</Phoenix>

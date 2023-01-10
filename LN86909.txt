@@ -1,0 +1,148 @@
+     H/COPY QSYSREFRLE,COPYRIGHTH
+     H/COPY QMBSREFRLE,MBQTXHH
+      ****************************************************************
+      *  FILE NAME...: LN86909           REF.NO: SR-9985             *
+      *  DESCRIPTION.: Inquiry - Loan eConsent                       *
+      *  DATE CREATED: 15/08/2022                                    *
+      *  AUTHOR......: Pruk H.                                       *
+      ****************************************************************
+      * LN86968    IS A PART OF SILVERLAKE SYSTEM (R)                *
+      *    (C) COPYRIGHT 2000                                        *
+      *    BY: SILVERLAKE SYSTEM SDN. BHD.                           *
+      *        FLOOR 12A, PLAZA IBM,                                 *
+      *        NO.1, JALAN TUN MOHD FUAD,                            *
+      *        TAMAN TUN DR. ISMAIL,                                 *
+      *        60000 KUALA LUMPUR, MALAYSIA                          *
+      ****************************************************************
+      *  MODIFICATION LOGS                                           *
+      *  NAME  INIT   DATE      REMARKS                              *
+      *  ----  -----  --------  -----------------------------------  *
+      ****************************************************************
+      *-- FILE DECLARATION --*
+     FLNWOFDTL  IF   E           K DISK    INFDS(INFDS)
+     FLNMAST    IF   E           K DISK
+     FLNTNEW    IF   E           K DISK    RENAME(RLNMAST:RLNTNEW)
+      *
+     ** MBASE-Common D-Spec for Maint File Handler
+     D/COPY QMBSREFRLE,MBQTXHD
+     ** LOANS-Common D-Spec for Maint File Handler
+     D/COPY QLNSREFRLE,LNQTXHD
+      *
+     ** I/R struc
+     D DS86909I      E DS                  EXTNAME(LN86909I) PREFIX(PR)
+     D DS86909R      E DS                  EXTNAME(LN86909R)
+      *
+     D INFDS           DS
+     D  INFILE                83     92
+     D  DB_RRN               397    400I 0
+     D  DB_KEY               401    500
+      *
+      *-- PROGRAM MAINLINE --*
+      *-- KEY LISTS --*
+     C     KYLNWOFDTL    KLIST
+     C                   KFLD                    PRACCTNO
+     C                   KFLD                    PRACTYPE
+     C                   KFLD                    PRRCTYPE
+     C                   KFLD                    PRPWDT8
+     C*
+     C     LNKEY         KLIST
+     C                   KFLD                    ACCTNO
+     C                   KFLD                    ACTYPE
+     C*
+     **==========================================
+     **
+     ** initialise, map header,
+     C                   EXSR      SRINIT
+      *
+     C                   SELECT
+     **
+     ** action inquiry
+     C                   WHEN      HDACCD      = 'I'
+     C                   EXSR      SRINQ
+     C                   OTHER
+      *-- INVALID HDACCD CODE --*
+     C                   EVAL      ERCODE      = 'MBM2000'
+     C                   EVAL      P8MDTA      = HDACCD
+     C                   EXSR      SRSENDERR
+     C                   ENDSL
+      *
+     ** initialise, map header,
+     C                   EXSR      SREXIT
+      *
+      *-- SUBROUTINE DECLARATION --*
+      ****************************************************************
+      *  SUBROUTINE: SRINQ                                           *
+      *  PURPOSE   : INQUIRY SUBROUTINE TO GET RECORD FROM THE FILES *
+      ****************************************************************
+     CSR   SRINQ         BEGSR
+      *-- BREAK THE KEY VALUES --*
+     C                   EVAL      DS86909I   = INSTRS
+     C                   EVAL      DS86909R   = DS86909I
+     C                   EVAL      WLEN        = %SIZE(DS86909R)
+     C                   EVAL      WSTRLEN     = 0
+      *
+     C                   EXSR      SRCVTIN
+      *
+      *-- READ FIRST RECORDS --*
+     C     KYLNWOFDTL    CHAIN     RLNWOFDTL                          31
+     C                   EXSR      SCVTTOSCR
+      *
+     C                   IF        *IN31 = *ON
+      *-- ERROR RETURN --*
+     C                   EVAL      ERCODE      = 'MBM2001'
+     C                   EVAL      P8MDTA      = PSPGM
+     C                   EXSR      SRSENDERR
+     C                   ELSE
+      *-- CREATE KEY RESPONSE --*
+     C                   EVAL      COUNTR = *ZEROS
+      * rtv cif info
+      *
+     C                   EXSR      SRPROC1
+     C                   EXSR      SRCVTOUT
+     C                   EVAL      %SUBST(OTSTRS:WSTRLEN+1:WLEN)
+     C                             = DS86909R
+     C                   EVAL      WSTRLEN = WSTRLEN + WLEN
+     C                   EVAL      COUNTR = COUNTR + 1
+      *
+     C                   EXSR      SRLOCK1
+     C                   EVAL      HDMREC    = 'N'
+     C                   EVAL      HDNREC = COUNTR
+      *
+     C                   ENDIF
+      *
+     CSR                 ENDSR
+     **============================================
+     ** sr -
+     **============================================
+     C     SRCVTIN       BEGSR
+     **
+     C     ERCVTIN       ENDSR
+     **============================================
+     ** sr -
+     **============================================
+     C     SRCVTOUT      BEGSR
+     **
+     C                   EVAL      DS86909I    = DS86909R
+     C                   EVAL      WHDVFMT_KEY = DS86909I
+     C                   EVAL      HDVFMT      = WHDVFMT
+     **
+     C     ERCVTOUT      ENDSR
+     **============================================
+     ** sr - cvt to scr value
+     **============================================
+     C     SCVTTOSCR     BEGSR
+     **
+     C     ECVTTOSCR     ENDSR
+     **============================================
+     ** sr - Process 1
+     **============================================
+     C     SRPROC1       BEGSR
+     **
+     C     ERPROC1       ENDSR
+     **============================================
+     C/COPY QMBSREFRLE,MBQTXHC
+     ** LOANS-Common C-Spec for Maint File Handler
+     C/COPY QLNSREFRLE,LNQTXHC
+     ** MBASE-Common C-Spec for Record locking
+     C/COPY QMBSREFRLE,MBQLCK
+

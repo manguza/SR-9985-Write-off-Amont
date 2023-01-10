@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Phoenix Type="RecordMap" Name="LN86857I" Standard="Fixed">
+<Fields>
+<Element Id="ARPFIL" Type="5" Length="10" Decimal="0"/>
+<Element Id="ARPKYV" Type="5" Length="100" Decimal="0"/>
+<Element Id="ARPDT8" Reference="ETP.TRANSACTION_DATESI"/>
+<Element Id="ARPTIM" Reference="ETP.TRANSACTION_TIMESI"/>
+</Fields>
+<Description>
+<Element Id="ARPFIL" Text="File name"/>
+<Element Id="ARPKYV" Text="Record key"/>
+<Element Id="ARPDT8" Text="Date of maintenance"/>
+<Element Id="ARPTIM" Text="Time change made"/>
+</Description>
+</Phoenix>
